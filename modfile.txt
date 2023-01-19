@@ -1,0 +1,12 @@
+-: Mod Name: Middle-Earth
+    Author - redmaverick616
+    Inspired by - AlexKage, physiX
+:-
+
+Include "modfile_assets.txt"
+
+Import "Manwe/ManweValar.lua"
+
+Import "MiddleEarth.lua"
+
+Include "Manwe/modfile_manwe.txt"

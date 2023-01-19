@@ -1,0 +1,13 @@
+{
+  Units = [
+    "_append"
+    {
+      Name = "ManweUpgradeRoomWeapon"
+      InheritFrom = "PassiveRoomWeapon"
+      DisplayInEditor = true
+      Thing = {
+        EditorOutlineDrawBounds = false
+      }
+    }
+  ]
+}

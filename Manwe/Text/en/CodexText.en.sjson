@@ -1,0 +1,25 @@
+{
+  /*
+  Manwë
+  Made by redmaverick616
+  Inspired by AlexKage and physiX
+  */
+  Texts = [
+	"_append"
+    {
+      Id = "CodexData_Manwe_0001"
+      Speaker = "Achilles"
+      DisplayName = "'...First sentence...'"
+    }
+    {
+      Id = "CodexData_Manwe_0002"
+      Speaker = "Achilles"
+      DisplayName = "'...First sentence. {#CodexBoldFormat}Added things...{#PreviousFormat}'"
+    }
+    {
+      Id = "CodexData_Manwe_0003"
+      Speaker = "Achilles"
+      DisplayName = "'...First sentence. {#CodexBoldFormat} More and longer added things.{#PreviousFormat}'"
+    }
+  ]
+}

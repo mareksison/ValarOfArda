@@ -1,0 +1,75 @@
+{
+  Weapons = [
+    "_append"
+    {
+      Name = "TheseusSpearSpinManwe"
+      InheritFrom = "TheseusSpearSpin"
+      Projectile = "TheseusSpearSpinManwe"
+    }
+    {
+      Name = "TheseusSpearThrowManwe"
+      InheritFrom = "TheseusSpearThrow"
+      Projectile = "TheseusSpearThrowManwe"
+    }
+    {
+      Name = "TheseusSpearThrowReturnManwe"
+      InheritFrom = "TheseusSpearThrowReturn"
+      Projectile = "TheseusSpearThrowReturnManwe"
+    }
+    {
+      Name = "TheseusSpearSpinManweBlades"
+      InheritFrom = "1_BasePlayerSlowWeapon"
+      Type = "GUN"
+      Projectile = "TheseusManweBlades"
+      ClipSize = 1
+      ChargeSound = "null"
+      FireSound = "null"
+      RootOwnerWhileFiring = false
+      BarrelLength = 0
+      FireGraphic = "null"
+      DisableOwnerForDuration = 0
+      Spread = 360
+    }
+    {
+      Name = "TheseusManweUpgradeWrath"
+      InheritFrom = "1_BasePlayerSlowWeapon"
+      Type = "GUN"
+      Projectile = "TheseusManweBolt"
+      FullyAutomatic = true
+      AutoLock = true
+      FireFx = "null"
+      IgnoreOwnerAttackDisabled = true
+    }
+    {
+      Name = "TheseusManweUpgradePassive"
+      InheritFrom = "TheseusManweUpgradeWrath"
+      Projectile = "TheseusManweBoltPassive"
+    }
+    {
+      Name = "DevotionManwe"
+      InheritFrom = "1_BasePlayerSlowWeapon"
+      Type = "GUN"
+      Projectile = "DevotionManwe"
+      FullyAutomatic = true
+      AutoLock = true
+      FireFx = "null"
+      IgnoreOwnerAttackDisabled = true
+    }
+    {
+      Name = "EnemyManweWeapon2"
+      InheritFrom = "1_BasePlayerSlowWeapon"
+      Type = "GUN"
+      Projectile = "DevotionManwe"
+      CooldownMin = 5
+      CooldownMax = 5
+      FireSound = "null"
+      CancelMovement = false
+      FullyAutomatic = false
+      AutoLock = false
+      UseTargetAngle = true
+      NumProjectiles = 5
+      ProjectileSpacing = 100
+      ProjectileInterval = 0.2
+    }
+  ]
+}

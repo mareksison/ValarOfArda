@@ -1,0 +1,262 @@
+{
+	Texts = [
+		"_append"
+		{
+			Id = "NPC_Manwe_01"
+			DisplayName = "Manwë"
+			Description = "King of the Valar"
+		}		
+		{
+			Id = "ManweFirstPickUp"
+			DisplayName = "Met Manwë"
+		}
+		{
+			Id = "ManweUpgrade"
+			DisplayName = "Manwë"
+			Description = "King of the Valar"
+		}
+		{
+			Id = "ManweUpgrades"
+			DisplayName = "King of the Valar"
+			Description = "The son of the god of the dead shall someday earn various Boons of Manwë."
+		}
+		{
+			Id = "ManweUpgrade_FlavorText01"
+			DisplayName = "feel the power of the blessed one."
+		}
+		{
+			Id = "ManweUpgrade_FlavorText02"
+			DisplayName = "benevolence of the Valar king of Middle-Earth and all Arda."
+		}
+		{
+			Id = "ManweUpgrade_FlavorText03"
+			DisplayName = "breathe the wind of Valinor."
+		}		
+		{
+      		Id = "ManweAirborne"
+			DisplayName = "Airborne"
+			Description = "{#ItalicFormat}{$Keywords.Status}{#PreviousFormat}: Victims are lifted into the air by wind, unable to move or act for {#BoldFormatGraft}{$TooltipData.TooltipAerialDuration} Sec{#PreviousFormat}."
+		}
+		{
+      		Id = "ManweShaken"
+			DisplayName = "Shaken"
+			Description = "{#ItalicFormat}{$Keywords.Status}{#PreviousFormat}: Victims are slowed and weakened by {$TooltipData.TooltipShakenPower}% for {#BoldFormatGraft}{$TooltipData.TooltipShakenDuration} Sec{#PreviousFormat}."
+		}
+		{
+      		Id = "Gust"
+			DisplayName = "Gust"
+			Description = "Traps victims in the center of a gust of wind."
+		}
+		{
+			Id = "ManweWeaponTrait"
+			DisplayName = "Zephyr Strike"
+			Description = "Your {$Keywords.Attack} deals more damage and inflicts {$Keywords.ManweAirborne}. \n {!Icons.Bullet}{#PropertyFormat}Attack Damage: \Column 380 {#PreviousFormat}{$TooltipData.DisplayDelta1}" 
+		} 		
+		{
+			Id = "ManweWeaponTrait_Initial"
+			InheritFrom = "ManweWeaponTrait"
+			Description = "Your {$Keywords.Attack} deals more damage and inflicts {$Keywords.ManweAirborne}. \n {!Icons.Bullet}{#PropertyFormat}Attack Damage: \Column 380 {#UpgradeFormat}{$TooltipData.NewTotal1}"
+		}
+		{
+			Id = "ManweSecondaryTrait"
+			DisplayName = "Zephyr Flourish"
+			Description = "Your {$Keywords.Special} deals more damage and inflicts {$Keywords.ManweAirborne}. \n {!Icons.Bullet}{#PropertyFormat}Special Damage: \Column 380 {#PreviousFormat}{$TooltipData.DisplayDelta1}"
+		} 	
+		{
+			Id = "ManweSecondaryTrait_Initial"
+			InheritFrom = "ManweSecondaryTrait"
+			Description = "Your {$Keywords.Special} deals more damage and inflicts {$Keywords.ManweAirborne}. \n {!Icons.Bullet}{#PropertyFormat}Special Damage: \Column 380 {#UpgradeFormat}{$TooltipData.NewTotal1}"
+		}		
+		{
+			Id = "ManweDashTrait"
+			DisplayName = "Zephyr Dash"
+			Description = "Your {$Keywords.Dash} creates a {$Keywords.Gust} where you started. \n {!Icons.Bullet}{#PropertyFormat}Gust Duration: \Column 380 {#PreviousFormat}{$TooltipData.DisplayDelta1}"
+		} 
+		{
+			Id = "ManweDashTrait_Initial"
+			InheritFrom = "ManweDashTrait"
+			Description = "Your {$Keywords.Dash} creates a {$Keywords.Gust} where you started. \n {!Icons.Bullet}{#PropertyFormat}Gust Duration: \Column 380 {#UpgradeFormat}{$TooltipData.NewTotal1}"
+		}
+		{
+			Id = "ManweSignoff"
+			DisplayName = "From Manwë"
+		}
+		{
+			Id = "ManweSignoff_Max"
+			DisplayName = """
+				From {#AwardMaxFlavorFormat}Manwë{#AwardDarkFlavorFormat}; you share an {#AwardMaxFlavorFormat}Harmonious Bond
+
+				{#AwardDarkFlavorFormat}He sees you as a friend to Valinor.
+			"""
+		}
+		{
+			Id = "Combat_Miss"
+			DisplayName = "Miss"
+		}
+		{
+			Id = "Combat_Airborne
+			DisplayName = "Airborne"
+		}
+		{
+			Id = "ManweShoutTrait"
+			DisplayName = "Manwë's Aid"
+			Description = "Your {$Keywords.WrathDerivedStocks} creates a vortex of wind that grows over {#BoldFormat}{$TooltipData.AddShout.SuperDuration} Sec{#PreviousFormat}., pulling victims into the center and inflicting {$Keywords.Airborne}. \n {!Icons.Bullet}{#PropertyFormat}Vortex Damage: \Column 380 {#PreviousFormat}{$TooltipData.DisplayDelta1} {#ItalicFormat}(every {$TooltipData.TooltipInterval} Sec.) \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.EXWrath}: \Column 380 {#OldFormat}{$TooltipData.TooltipDuration} Sec. Duration"
+		}		
+		{
+			Id = "ManweShoutTrait_Tray"
+			InheritFrom = "ManweShoutTrait"
+			Description = "Your {$Keywords.WrathDerivedStocks} creates a vortex of wind that grows over {#BoldFormat}{$TooltipData.AddShout.SuperDuration} Sec{#PreviousFormat}., pulling victims into the center and inflicting {$Keywords.Airborne}. \n {!Icons.Bullet}{#PropertyFormat}Vortex Damage: \Column 380 {#PreviousFormat}{$TooltipData.DisplayDelta1} {#ItalicFormat}(every {$TooltipData.TooltipInterval} Sec.) \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.EXWrath}: \Column 380 {#UpgradeFormat}{$TooltipData.TooltipDuration} Sec. Duration"
+		}	
+		{
+			Id = "ManweShoutTrait_Initial"
+			InheritFrom = "ManweShoutTrait"
+			Description = "Your {$Keywords.WrathDerivedStocks} creates a vortex of wind that grows over {#BoldFormat}{$TooltipData.AddShout.SuperDuration} Sec{#PreviousFormat}., pulling victims into the center and inflicting {$Keywords.Airborne}. \n {!Icons.Bullet}{#PropertyFormat}Vortex Damage: \Column 380 {#PreviousFormat}{$TooltipData.NewDelta1} {#ItalicFormat}(every {$TooltipData.TooltipInterval} Sec.) \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.EXWrath}: \Column 380 {#UpgradeFormat}{$TooltipData.TooltipDuration} Sec. Duration"
+		} 
+		{
+			Id = "ManweRangedTrait"
+			DisplayName = "Zephyr Shot"
+			Description = "Your {$Keywords.Cast} sends a {$Keywords.Gust} forward. \n {!Icons.Bullet}{#PropertyFormat}Gust Duration: \Column 380 {$TooltipData.DisplayDelta1} Secs."
+		}
+		{
+			Id = "ManweRangedTrait_Initial"
+			InheritFrom = "ManweRangedTrait"
+			Description = "Your {$Keywords.Cast} sends a {$Keywords.Gust} forward. \n {!Icons.Bullet}{#PropertyFormat}Gust Duration: \Column 380 {$TooltipData.NewTotal1} Secs."
+		}
+		{
+			Id = "ManweRangedTrait_Tray"
+			InheritFrom = "ManweRangedTrait"
+			Description = "Your {$Keywords.Cast} sends a {$Keywords.Gust} forward. \n {!Icons.Bullet}{#PropertyFormat}Gust Duration: \Column 380 {#PreviousFormat}{$TooltipData.NewTotal1} Secs."
+		}
+		{
+			Id = "ShieldLoadAmmo_ManweRangedTrait"
+			DisplayName = "Zephyr Flare"
+			Description = "Your {$Keywords.Cast} sends a large {$Keywords.Gust} forward. \n {!Icons.Bullet}{#PropertyFormat}Gust Duration: \Column 380 {$TooltipData.DisplayDelta1} Secs."
+		}
+		{
+			Id = "ShieldLoadAmmo_ManweRangedTrait_Tray"
+			InheritFrom = "ShieldLoadAmmo_ManweRangedTrait"
+			Description = "Your {$Keywords.Cast} sends a large {$Keywords.Gust} forward. \n {!Icons.Bullet}{#PropertyFormat}Gust Duration: \Column 380 {$TooltipData.NewTotal1} Secs."
+		}
+		{
+			Id = "ShieldLoadAmmo_ManweRangedTrait_Initial"
+			InheritFrom = "ShieldLoadAmmo_ManweRangedTrait"
+			Description = "Your {$Keywords.Cast} sends a large {$Keywords.Gust} forward. \n {!Icons.Bullet}{#PropertyFormat}Gust Duration: \Column 380 {$TooltipData.NewTotal1} Secs."
+		}
+		{
+			Id = "BowLoadAmmo_ManweRangedTrait"
+			InheritFrom = "ShieldLoadAmmo_ManweRangedTrait"
+		}
+		{
+			Id = "BowLoadAmmo_ManweRangedTrait_Tray"
+			InheritFrom = "ShieldLoadAmmo_ManweRangedTrait_Tray"
+		}
+		{
+			Id = "BowLoadAmmo_ManweRangedTrait_Initial"
+			InheritFrom = "ShieldLoadAmmo_ManweRangedTrait_Initial"
+		}
+		{
+			Id = "ManweRevengeTrait"
+			DisplayName = "Music Against Discord"
+			Description = "After you take damage, your foe becomes {$Keywords.ManweAirborne}. \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.ManweAirborne} Duration: \Column 380 {#UpgradeFormat}{$TooltipData.DisplayDelta1} Seconds"
+		}
+		{
+			Id = "ManweRevengeTrait_Initial"
+			InheritFrom = "ManweRevengeTrait"
+			Description = "After you take damage, your foe becomes {$Keywords.ManweAirborne}. \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.ManweAirborne} Duration: \Column 380 {#UpgradeFormat}{$TooltipData.NewTotal1} Seconds"
+		}
+		{
+			Id = "ManweShakenTrait"
+			DisplayName = "Breath of Arda"
+			Description = "Your {$Keywords.GodBoonPlural} with airborne effects make foes {$Keywords.ManweShaken} after the {$Keywords.ManweAirborne} is finished. \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.ManweShaken} Duration: \Column 380 {$TooltipData.DisplayDelta1} Seconds"
+		}
+		{
+			Id = ManweShakenTrait_Initial"
+			InheritFrom = "ManweShakenTrait"
+			Description = "Your {$Keywords.GodBoonPlural} with airborne effects make foes {$Keywords.ManweShaken} after the {$Keywords.ManweAirborne} is finished. \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.ManweShaken} Duration: \Column 380 {$TooltipData.NewTotal1} Seconds"
+		}
+		{
+			Id = "ManweAirborneTrait"
+			DisplayName = "Held Aloft"
+			Description = "Airborne effects last longer but is delayed for {$Keywords.ManweAirborneDelay} Secs. \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.ManweAirborne} Duration Increase: \Column 380 {$TooltipData.DisplayDelta1} Seconds"
+		}
+		{
+			Id = "ManweAirborneTrait_Initial"
+			InheritFrom = "ManweAirborneTrait"
+			Description = "Airborne effects last longer but is delayed for {$Keywords.ManweAirborneDelay} Secs. \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.ManweAirborne} Duration Increase: \Column 380 {$TooltipData.NewTotal1} Seconds"
+		}
+		{
+			Id = "ManweGustTrait"
+			DisplayName = "Gust of Wind"
+			Description = "Your {$Keywords.Gust} effects pull foes in a wider area. \n {!Icons.Bullet}{#PreviousFormat}{$Keywords.ManweGust} Bonus Area of Effect: \Column 380 {$TooltipData.DisplayDelta1}"
+		}
+		{
+			Id = "ManweGustTrait_Initial"
+			InheritFrom = "ManweGustTrait"
+			Description = "Your {$Keywords.Gust} effects pull foes in a wider area. \n {!Icons.Bullet}{#PreviousFormat}{$Keywords.ManweGust} Bonus Area of Effect: \Column 380 {$TooltipData.NewTotal1}"
+		}
+		{
+			Id = "ManweVortexTrait"
+			DisplayName = "Gathering Storm"
+			Description = "Your {$Keywords.Gust} effects also deal damage. \n {!Icons.Bullet}{#PreviousFormat}{$Keywords.ManweGust} Damage per Second: \Column 380 {$TooltipData.DisplayDelta1}"
+		}
+		{
+			Id = "ManweVortexTrait_Initial"
+			InheritFrom = "ManweVortexTrait"
+			Description = "Your {$Keywords.Gust} effects also deal damage. \n {!Icons.Bullet}{#PreviousFormat}{$Keywords.ManweGust} Damage per Second: \Column 380 {$TooltipData.NewTotal1}"
+		}
+		{
+			Id = "ManweSuperGenerationTrait"
+			DisplayName = "Carried by the Wind"
+			Description = "Your {$Keywords.WrathGauge} charges up faster Whenever you {$Keywords.Dash}. \n {!Icons.Bullet}{#PropertyFormat}Faster Gauge Gain: \Column 380 {$TooltipData.DisplayDelta1}"
+		}
+		{
+			Id = "ManweSuperGenerationTrait_Initial"
+			InheritFrom = "ManweSuperGenerationTrait"
+			Description = "Your {$Keywords.WrathGauge} charges up faster Whenever you {$Keywords.Dash}. \n {!Icons.Bullet}{#PropertyFormat}Faster Gauge Gain: \Column 380 {$TooltipData.NewTotal1}"
+		}
+		{
+			Id = "ManweWrathTrait",
+			DisplayName = "Commanding Winds"
+			Description = "Your {$Keywords.Wrath} pushes foes away and the effect lasts longer. \n {!Icons.Bullet}{#PropertyFormat}Bonus Duration: \Column 380 {#UpgradeFormat}{$TooltipData.DisplayDelta1} Sec. Duration"
+    	}
+		{
+			Id = "ManweWrathTrait_Initial",
+			InheritFrom = "ManweWrathTrait"
+			Description = "Your {$Keywords.Wrath} pushes foes awa and the effect lasts longer. \n {!Icons.Bullet}{#PropertyFormat}Bonus Duration: \Column 380 {#UpgradeFormat}{$TooltipData.NewTotal1} Sec. Duration"
+    	}
+		{
+			Id = "ManweHealTrait"
+			DisplayName = "Breath of Súlimo"
+			Description = "You heal {$Keywords.ManweHealAmount} whenever you {$Keywords.Dash} to a cap. \n {!Icons.Bullet} {#PropertyFormat}Healing Cap:  \Column 380{#UpgradeFormat}{$TooltipData.DisplayDelta1}"
+		}
+		{
+			Id = "ManweHealTrait_Initial"
+			InheritFrom = "ManweHealTrait"
+			Description = "You heal {$Keywords.ManweHealAmount} whenever you {$Keywords.Dash} to a cap. \n {!Icons.Bullet} {#PropertyFormat}Healing Cap:  \Column 380{#UpgradeFormat}{$TooltipData.NewTotal1}"
+		}
+		{
+			Id = "ForceManweBoonTrait"
+			DisplayName = "Light of the Valar"
+			Description = "The next {$Keywords.GodBoon} you find will be from {#BoldFormat}Manwë{#PreviousFormat}. His blessings have {#AltUpgradeFormat}{$TooltipData.TooltipBonusChance:P} {#PreviousFormat} chance to be {#RareFormat}Rare {#PreviousFormat}or better."
+		}
+		{
+			Id = "ForceManweBoonTrait_Rack"
+			InheritFrom = "ForceManweBoonTrait"
+			Description = "The next {$Keywords.GodBoon} you find will be from {#BoldFormat}Manwë{#PreviousFormat}. His blessings have {#AltUpgradeFormat}{$TooltipData.TooltipBonusChance:P} {#PreviousFormat} chance to be {#RareFormat}Rare {#PreviousFormat}or better. \n\n {#AwardFlavorFormat}{$TooltipData.SignoffText}"
+		}
+		{
+			Id = "ForceManweBoonTrait_Inactive"
+			DisplayName = "Light of the Valar"
+			Description = "Manwë's blessings have {#AltUpgradeFormat}{$TooltipData.TooltipBonusChance:P} {#PreviousFormat} chance to be {#RareFormat}Rare {#PreviousFormat}or better."
+		}
+		{
+			Id = "ManweZeusTrait"
+			DisplayName = "Kings of Gods"
+			Description = "You begin each {$Keywords.EncounterAlt} with your {$Keywords.WrathGauge} almost full. \n {!Icons.Bullet}{#PropertyFormat}Starting Gauge: \Column 380 {$TooltipData.NewTotal1}{#UpgradeFormat}%"
+		}
+		{
+			Id = "LtUpgrade_Manwe"
+			DisplayName = "Blessed foes now launch you airborne."
+		}	
+	]
+}

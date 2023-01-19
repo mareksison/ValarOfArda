@@ -1,0 +1,27 @@
+-: Mod Name: Middle-Earth
+    Author - redmaverick616
+    Inspired by - AlexKage, physiX
+:-
+
+:: Assets
+To "Win/Packages/MEManwe.pkg"
+Replace "Packages/MEManwe.pkg"
+To "Win/Packages/720p/MEManwe.pkg"
+Replace "Packages/MEManwe.pkg"
+To "Win/Packages/MEManwe.pkg_manifest"
+Replace "Packages/MEManwe.pkg_manifest"
+To "Win/Packages/720p/MEManwe.pkg_manifest"
+Replace "Packages/MEManwe.pkg_manifest"
+
+:: Audio
+To "Audio/FMOD/Build/Desktop/VO.h"
+Replace "Audio/VO.h"
+To "Audio/FMOD/Build/Desktop/VO.txt"
+Replace "Audio/VO.txt"
+
+To "Audio/FMOD/Build/Desktop/VO.fsb"
+Replace "Audio/VO.fsb" 
+
+:: Subtitles
+To "Subtitles/en/ZagreusScratch.csv"
+Replace "Audio/Subtitles/Subtitle.en.csv"
