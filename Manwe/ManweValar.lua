@@ -149,31 +149,7 @@ if ModUtil ~= nil then
 	OlympusWeaponData.ManweShoutWeapon = {
 		BlockWrathGain = true,
 	}
-	
-	OlympusWeaponData.ManweBeamWeapon = {
-		InheritFrom = { "NoSlowFrameEffect", "NoShakeEffect", "WrathWeapon", },
-		HitScreenshake = { Distance = 3, Speed = 300, Duration = 0.06, FalloffSpeed = 3000 },
-		ImpactReactionHitsOverride = 1,
-		MultipleProjectileMultiplier = 0.10,
-		BlockInterrupt = true,
-		Sounds =
-		{
-			FireSounds =
-			{
-				{ Name = "/SFX/HellFireShoot" },
-				{ Name = "/SFX/Enemy Sounds/Tisiphone/TisiphoneHarpySlowBeam" },
-			},
-			ImpactSounds =
-			{
-				Invulnerable = "/SFX/ArrowWallHitClankSmall",
-				BrickObstacle = "/SFX/SwordWallHitClankSmall",
-				StoneObstacle = "/SFX/ArrowMetalStoneClang",
-				MetalObstacle = "/SFX/ArrowMetalStoneClang",
-				BushObstacle = "/Leftovers/World Sounds/LeavesRustle",
-			},
-		},
-	}
-	OlympusWeaponData.DevotionApollo =
+	OlympusWeaponData.DevotionManwe =
 	{
 		HitScreenshake = { Distance = 3, Speed = 1000, Duration = 0.08, FalloffSpeed = 3000 },
 		HitSimSlowParameters =
@@ -227,7 +203,7 @@ if ModUtil ~= nil then
 		{
 			FireSounds =
 			{
-				{ Name = "/SFX/Player Sounds/ElectricZapSmall" },
+				{ Name = "/SFX/Player Sounds/DemeterColdNova" },
 			},
 		},
 	}
@@ -242,28 +218,22 @@ if ModUtil ~= nil then
 
 		AIData = {
 			FireTicks = 1,
-			FireInterval = 3,
+			FireCooldown = 0.1,
+			FireInterval = 0.1,
 
-			AttackSlotsPerTick = 15,
-			AttackSlotInterval = 0.01,
+			AttackSlotInterval = 5.0,
+			AttackSlotsPerTickMin = 1,
+			AttackSlotsPerTickMax = 1,
 			AttackSlots =
 			{
-				-- inner circle
-				{ Angle = 0, OffsetDistance = 0, OffsetScaleY = 0.48, UseTargetPosition = true },
-				{ Angle = 30, OffsetDistance = 750, OffsetScaleY = 0.48, UseTargetPosition = true},
-				{ Angle = 150, OffsetDistance = 750, OffsetScaleY = 0.48, UseTargetPosition = true},
-				{ Angle = 210, OffsetDistance = 750, OffsetScaleY = 0.48, UseTargetPosition = true},
-				{ Angle = 330, OffsetDistance = 750, OffsetScaleY = 0.48, UseTargetPosition = true, PauseDuration = 1.0},
-				{ Angle = 0, OffsetDistance = 0, OffsetScaleY = 0.48, UseTargetPosition = true },
-				{ Angle = 30, OffsetDistance = 750, OffsetScaleY = 0.48, UseTargetPosition = true},
-				{ Angle = 90, OffsetDistance = 750, OffsetScaleY = 0.48, UseTargetPosition = true},
-				{ Angle = 210, OffsetDistance = 750, OffsetScaleY = 0.48, UseTargetPosition = true},
-				{ Angle = 270, OffsetDistance = 750, OffsetScaleY = 0.48, UseTargetPosition = true, PauseDuration = 1.0},
-				{ Angle = 0, OffsetDistance = 0, OffsetScaleY = 0.48, UseTargetPosition = true },
-				{ Angle = 90, OffsetDistance = 750, OffsetScaleY = 0.48, UseTargetPosition = true},
-				{ Angle = 150, OffsetDistance = 750, OffsetScaleY = 0.48, UseTargetPosition = true},
-				{ Angle = 270, OffsetDistance = 750, OffsetScaleY = 0.48, UseTargetPosition = true},
-				{ Angle = 330, OffsetDistance = 750, OffsetScaleY = 0.48, UseTargetPosition = true, PauseDuration = 1.0},
+				-- WrathTargetSetA
+				{ UseMapObjectId = 525346 },
+				{ UseMapObjectId = 525411 },
+				{ UseMapObjectId = 525410 },
+				{ UseMapObjectId = 525408 },
+				{ UseMapObjectId = 525409 },
+				{ UseMapObjectId = 525406 },
+				{ UseMapObjectId = 543853 },
 			},
 		},
 
@@ -271,33 +241,98 @@ if ModUtil ~= nil then
 		{
 			FireSounds =
 			{
-				{ Name = "/SFX/Player Sounds/ElectricZapSmall" },
+				{ Name = "/SFX/Player Sounds/DemeterColdNova" },
 			},
 		},
 	}
-	OlympusEffectData.Paralyzed =
+	OlympusEffectData.ManweAirborne =
 	{
-		OnApplyFunctionName = "ParalyzedApply",
-		OnClearFunctionName = "ParalyzedClear",
+		OnApplyFunctionName = "ManweAirborneApply",
+		OnClearFunctionName = "ManweAirborneClear",
 	}
-	OlympusEffectData.ApolloBlind =
+	OlympusEffectData.ManweShaken =
 	{
-		OnApplyFunctionName = "ApolloBlindApply",
-		OnClearFunctionName = "ApolloBlindClear",
-	}
-	OlympusEffectData.DistanceResist =
-	{
-		OnApplyFunctionName = "DistanceResistApply",
-		OnClearFunctionName = "DistanceResistClear",
-	}
-	OlympusEffectData.BlindLightning =
-	{
-		DamageTextStartColor = Color.ZeusDamageLight,
-		DamageTextColor = Color.ZeusDamage,
+		OnApplyFunctionName = "ManweShakenApply",
+		OnClearFunctionName = "ManweShakenClear",
 	}
 	-- GlobalVoiceLines
 	local OlympusGlobalVoiceLines = ModUtil.Entangled.ModData(GlobalVoiceLines)
 	local OlympusHeroVoiceLines = ModUtil.Entangled.ModData(HeroVoiceLines)
+	table.insert(OlympusGlobalVoiceLines.BoonUsedVoiceLines, {
+		BreakIfPlayed = true,
+		RandomRemaining = true,
+		PreLineWait = 0.5,
+		RequiredLastGodLoot = "HestiaUpgrade",
+		RequiredEncounters = { "DevotionTestTartarus", "DevotionTestAsphodel", "DevotionTestElysium", },
+		RequireCurrentEncounterNotComplete = true,
+		Source = { SubtitleColor = Color.HestiaVoice },
+
+		-- Lines
+		{ Cue = "/VO/Hestia_0149" }, -- need new VO
+		-- More lines
+		{ Cue = "/VO/Hestia_0150" }, -- need new VO
+		-- Other lines
+		{ Cue = "/VO/Hestia_0151" }, -- need new VO
+		-- .
+		{ Cue = "/VO/Hestia_0152" }, -- need new VO
+		-- .
+		{ Cue = "/VO/Hestia_0153" }, -- need new VO
+		-- .
+		{ Cue = "/VO/Hestia_0154" }, -- need new VO
+		-- .
+		{ Cue = "/VO/Hestia_0155" }, -- need new VO
+		-- .
+		{ Cue = "/VO/Hestia_0156" }, -- need new VO
+		-- .
+		{ Cue = "/VO/Hestia_0157" }, -- need new VO
+		-- .
+		{ Cue = "/VO/Hestia_0158" }, -- need new VO
+		-- .
+		{ Cue = "/VO/Hestia_0159" }, -- need new VO
+		-- .
+		{ Cue = "/VO/Hestia_0160" }, -- need new VO
+	})
+	table.insert(OlympusHeroVoiceLines.UpgradePickedVoiceLines, {
+		RandomRemaining = true,
+		BreakIfPlayed = true,
+		SuccessiveChanceToPlay = 0.5,
+		PreLineWait = 0.75,
+		RequiredLastGodLoot = "HestiaUpgrade",
+		-- Lines.
+		{ Cue = "/VO/ZagreusField_4841" }, -- need new VO
+		-- More lines.
+		{ Cue = "/VO/ZagreusField_4842" }, -- need new VO
+		-- .
+		{ Cue = "/VO/ZagreusField_4843" }, -- need new VO
+		-- .
+		{ Cue = "/VO/ZagreusField_4844" }, -- need new VO
+		-- .
+		{ Cue = "/VO/ZagreusField_4845" }, -- need new VO
+		-- .
+		{ Cue = "/VO/ZagreusField_4846" }, -- need new VO
+		-- .
+		{ Cue = "/VO/ZagreusField_4847" }, -- need new VO
+		-- .
+		{ Cue = "/VO/ZagreusField_4848" }, -- need new VO
+		-- .
+		{ Cue = "/VO/ZagreusField_4849" }, -- need new VO
+		-- .
+		{ Cue = "/VO/ZagreusField_4850" }, -- need new VO
+	})
+	table.insert(OlympusHeroVoiceLines.UpgradePickedVoiceLines, {
+		PlayOnce = true,
+		RandomRemaining = true,
+		BreakIfPlayed = true,
+		PreLineWait = 0.65,
+		RequiredFalseEncounters = { "DevotionTestTartarus", "DevotionTestAsphodel", "DevotionTestElysium", "Shop" },
+
+		-- A god from another world. I will not forget this, Manwë!
+		{ Cue = "/VO/ZagreusField_4832", RequiredLastGodLoot = "ManweUpgrade", RequiredTextLinesThisRun = "ManweFirstPickUp" }, -- need new VO
+	})	
+	table.insert(OlympusHeroVoiceLines.FullSuperActivatedVoiceLines, {
+		-- Manwë!!
+		Cue = "/VO/ZagreusField_4951", RequiredTrait = "ManweShoutTrait", RequiredFalseSpurnedGodName = "ManweUpgrade" -- need new VO
+	})
 	table.insert(OlympusHeroVoiceLines.SwapUpgradePickedVoiceLines, {
 		RandomRemaining = true,
 		BreakIfPlayed = true,
@@ -308,212 +343,115 @@ if ModUtil ~= nil then
 		CooldownName = "SaidApolloRecently",
 		CooldownTime = 40,
 
-		-- I'm sure Lord Apollo won't mind.
-		{ Cue = "/VO/ZagreusField_1863" },
-		-- Surely Apollo won't mind.
-		{ Cue = "/VO/ZagreusField_1864" },
-		-- Lord Apollo won't mind, will he?
-		{ Cue = "/VO/ZagreusField_1865" },
+		-- I'm sure King Manwë won't mind.
+		{ Cue = "/VO/ZagreusField_1863" }, -- need new VO
+		-- Surely Manwë won't mind.
+		{ Cue = "/VO/ZagreusField_1864" }, -- need new VO
+		-- King Manwë won't mind, will he?
+		{ Cue = "/VO/ZagreusField_1865" }, -- need new VO
 	})
-	table.insert(OlympusGlobalVoiceLines.BoonUsedVoiceLines, {
-		BreakIfPlayed = true,
-		RandomRemaining = true,
-		PreLineWait = 0.5,
-		RequiredLastGodLoot = "ApolloUpgrade",
-		RequiredEncounters = { "DevotionTestTartarus", "DevotionTestAsphodel", "DevotionTestElysium", },
-		RequireCurrentEncounterNotComplete = true,
-		Source = { SubtitleColor = Color.ApolloVoice },
-	
-		-- Well done, Zagzag.
-		{ Cue = "/VO/Apollo_0149" },
-		-- I knew you had it in you.
-		{ Cue = "/VO/Apollo_0150" },
-		-- I see a bright future.
-		{ Cue = "/VO/Apollo_0151" },
-		-- There's no one like you, Zagzag.
-		{ Cue = "/VO/Apollo_0152" },
-		-- I'll write you a song for this!
-		{ Cue = "/VO/Apollo_0153" },
-		-- Just... Thank you.
-		{ Cue = "/VO/Apollo_0154" },
-		-- Underworld, I want to hear you make some noise!
-		{ Cue = "/VO/Apollo_0155" },
-		-- Let's get you out this time around!
-		{ Cue = "/VO/Apollo_0156" },
-		-- We can go the distance together!
-		{ Cue = "/VO/Apollo_0157" },
-		-- Another one bites the Styx!
-		{ Cue = "/VO/Apollo_0158" },
-		-- Light is on your side!
-		{ Cue = "/VO/Apollo_0159" },
-		-- Let's try this once more, with feeling!
-		{ Cue = "/VO/Apollo_0160" },
-	})
-	table.insert(OlympusHeroVoiceLines.UpgradePickedVoiceLines, {
-		RandomRemaining = true,
-		BreakIfPlayed = true,
-		SuccessiveChanceToPlay = 0.5,
-		PreLineWait = 0.75,
-		RequiredLastGodLoot = "ApolloUpgrade",
-		-- For the light.
-		{ Cue = "/VO/ZagreusField_4819" },
-		-- I can hear it.
-		{ Cue = "/VO/ZagreusField_4820" },
-		-- That's my jam.
-		{ Cue = "/VO/ZagreusField_4821" },
-		-- Music to my ears.
-		{ Cue = "/VO/ZagreusField_4822" },
-		-- Nice beat.
-		{ Cue = "/VO/ZagreusField_4823" },
-		-- Musical.
-		{ Cue = "/VO/ZagreusField_4824" },
-		-- Our duet continues.
-		{ Cue = "/VO/ZagreusField_4825" },
-		-- Beat it.
-		{ Cue = "/VO/ZagreusField_4826" },
-		-- That's bright.
-		{ Cue = "/VO/ZagreusField_4827" },
-		-- Flashy.
-		{ Cue = "/VO/ZagreusField_4828" },
-	})
-	table.insert(OlympusHeroVoiceLines.UpgradePickedVoiceLines, {
-		PlayOnce = true,
-		RandomRemaining = true,
-		BreakIfPlayed = true,
-		PreLineWait = 0.65,
-		RequiredFalseEncounters = { "DevotionTestTartarus", "DevotionTestAsphodel", "DevotionTestElysium", "Shop" },
-
-		-- That's much brighter! All thanks to you, Lord Apollo!
-		{ Cue = "/VO/ZagreusField_4832", RequiredLastGodLoot = "ApolloUpgrade", RequiredTextLinesThisRun = "ApolloFirstPickUp" },
-	})	
-	table.insert(OlympusHeroVoiceLines.FullSuperActivatedVoiceLines, { 
-		-- Apollo!!
-		Cue = "/VO/ZagreusField_4833", RequiredTrait = "ApolloShoutTrait", RequiredFalseSpurnedGodName = "ApolloUpgrade" 
-	})	
-	table.insert(OlympusHeroVoiceLines.SwapUpgradePickedVoiceLines, {
-		RandomRemaining = true,
-		BreakIfPlayed = true,
-		PreLineWait = 0.65,
-		SuccessiveChanceToPlayAll = 0.33,
-		RequiredFalseEncounters = { "DevotionTestTartarus", "DevotionTestAsphodel", "DevotionTestElysium", },
-		RequiredSwappedGodLoot = "ZeusUpgrade",
-		CooldownName = "SaidZeusRecently",
-		CooldownTime = 40,
-
-		-- I'm sure Lord Apollo won't mind.
-		{ Cue = "/VO/ZagreusField_4829" },
-		-- Surely Apollo won't mind.
-		{ Cue = "/VO/ZagreusField_4830" },
-		-- Lord Apollo won't mind, will he?
-		{ Cue = "/VO/ZagreusField_4831" },
-	})	
 	--BoonInfoScreenData
 	local OlympusBoonInfoScreenData = ModUtil.Entangled.ModData(BoonInfoScreenData)
-	table.insert(OlympusBoonInfoScreenData.Ordering, "ApolloUpgrade")
+	table.insert(OlympusBoonInfoScreenData.Ordering, "ManweUpgrade")
 	
 	--ProjectileData
 	local OlympusProjectileData = ModUtil.Entangled.ModData(ProjectileData)
-	OlympusProjectileData.ApolloColorProjectile = {
-		DamageTextStartColor = OlympusColor.ApolloDamageLight,
-		DamageTextColor = OlympusColor.ApolloDamage
+	OlympusProjectileData.ManweColorProjectile = {
+		DamageTextStartColor = OlympusColor.ManweDamageLight,
+		DamageTextColor = OlympusColor.ManweDamage
 	}
-	OlympusProjectileData.ApolloLobProjectile = {
-		InheritFrom = { "NoSlowFrameProjectile", "NoShakeProjectile", "ApolloColorProjectile" },
+	OlympusProjectileData.ManweProjectile = {
+		InheritFrom = { "NoSlowFrameProjectile", "NoShakeProjectile", "ManweColorProjectile" },
 		NeverStore = true,
 	}
-	OlympusProjectileData.DionysusLobProjectileAdditional = {
-		InheritFrom = { "NoSlowFrameProjectile", "NoShakeProjectile", "DionysusColorProjectile" },
-	}
-	OlympusProjectileData.ApolloLobProjectileAdditional = {
-		InheritFrom = { "NoSlowFrameProjectile", "NoShakeProjectile", "ApolloColorProjectile" },
-	}	
-	OlympusProjectileData.ApolloField =
+	OlympusProjectileData.ManweField =
 	{
 		InheritFrom = { "NoSlowFrameProjectile", "NoShakeProjectile" },
 		SpawnedProjectile = true,
 	}
-	OlympusProjectileData.ApolloBeowulfProjectile = {
-		InheritFrom = { "ApolloLobProjectile" },
+	OlympusProjectileData.ManweBeowulfProjectile = {
+		InheritFrom = { "ManweProjectile" },
 		NeverStore = true,
 	}
-	OlympusProjectileData.ApolloShoutWeapon = {
+	OlympusProjectileData.ManweShoutWeapon = {
 		InheritFrom = { "NoSlowFrameProjectile", "NoShakeProjectile" },
-	}
-	OlympusProjectileData.AreaWeakenApollo = {
-		InheritFrom = { "ApolloColorProjectile" },
 	}
 	-- GameData
 	local OlympusGameData = ModUtil.Entangled.ModData(GameData)
-	table.insert(OlympusGameData.AllSynergyTraits, "FamedDuetTrait")
-	table.insert(OlympusGameData.AllSynergyTraits, "WarSongTrait")
-	table.insert(OlympusGameData.AllSynergyTraits, "HyacinthTrait")
-	table.insert(OlympusGameData.AllSynergyTraits, "SeaChanteyTrait")
-	table.insert(OlympusGameData.AllSynergyTraits, "MasterBoltTrait")
-	table.insert(OlympusGameData.AllSynergyTraits, "MasterLobApolloTrait")
-	table.insert(OlympusGameData.AllSynergyTraits, "MasterLobDionysusTrait")
-	table.insert(OlympusGameData.AllSynergyTraits, "BlindDurationTrait")
-	table.insert(OlympusGameData.AllSynergyTraits, "DamageReduceDistanceTrait")
+	table.insert(OlympusGameData.AllSynergyTraits, "KingOfGods")
 	
-	OlympusGameData.ApolloBasicPickUpTextLines = {
-		"ApolloFirstPickUp",
-		"ApolloMiscPickup01",
-		"ApolloMiscPickup02",
-		"ApolloMiscPickup03",
-		-- "ApolloMiscPickup04",
-		"ApolloMiscPickup05",
-		"ApolloMiscPickup06",
-		"ApolloMiscPickup07",
-		"ApolloMiscPickup08",
-		"ApolloMiscPickup09",
-		-- "ApolloMiscPickup10",
-		"ApolloMiscPickup11",
-		"ApolloMiscPickup12",
-		"ApolloMiscPickup13",
-		"ApolloMiscPickup14",
-		"ApolloMiscPickup15",
-		"ApolloMiscPickup16",
-		"ApolloMiscPickup17",
-		-- "ApolloMiscPickup18",
-		-- "ApolloMiscPickup19",
+	OlympusGameData.ManweBasicPickUpTextLines = { -- need new VO
+		"ManweFirstPickUp",
+		"ManweMiscPickup01",
+		"ManweMiscPickup02",
+		"ManweMiscPickup03",
+		"ManweMiscPickup04",
+		"ManweMiscPickup05",
+		"ManweMiscPickup06",
+		"ManweMiscPickup07",
+		"ManweMiscPickup08",
+		"ManweMiscPickup09",
+		"ManweMiscPickup10",
 	}
-	table.insert(OlympusGameData.ConversationOrder, "ApolloUpgrade")
-	table.insert(OlympusGameData.RunClearMessageData.ClearWeaponsFiredWrath.GameStateRequirements.RequiredWeaponsFiredThisRun.Names, "ApolloBeamWeapon")
-	ModUtil.Table.Merge(OlympusGameData.GodAboutGodVoiceLines, { 
-		"ApolloAboutZeus01", "ApolloAboutStepSiblings01", "ApolloAboutDaughters01",
-		"ApolloAboutDaughters02", "ApolloAboutDaughters03", "ApolloAboutDaughters04",
-		"ApolloAboutDaughters05", "ApolloAboutHydra", "ApolloAboutDaphne01",
-		"ApolloAboutPan01", "ApolloAboutArtemis01", "ApolloAboutArtemis02",
-		"ApolloAboutArtemis03", "ApolloAboutMusic01", "ApolloAboutHarpQuest01",
-		"ApolloAboutHarpQuest02", "ApolloAboutOrpheus01", "ApolloAboutOrpheus02" }
+	GameData.RunClearMessageData.ClearRequiredTraitsManwe =
+	{
+		InheritFrom = { "DefaultMessage" },
+		GameStateRequirements =
+		{
+			RequiredCountOfTraitsCount = 6,
+			RequiredCountOfTraits =
+			{
+				"ManweWeaponTrait",
+				"ManweDashTrait",
+				"ManweRangedTrait",
+				"ManweRangedTrait",
+				"ManweShoutTrait",
+
+				"ManweRevengeTrait",
+				"ManweShakenTrait", "ManweAirborneTrait",
+				"ManweGustTrait", "ManweVortexTrait",
+
+				"ManweSuperGenerationTrait",
+				"ManweWrathTrait",
+				"ManweHealTrait",
+			},
+			RequiredOneOfTraits = { "ManweShakenTrait" },
+		},
+	}
+	table.insert(OlympusGameData.ConversationOrder, "ManweUpgrade")
+	table.insert(OlympusGameData.RunClearMessageData.ClearWeaponsFiredWrath.GameStateRequirements.RequiredWeaponsFiredThisRun.Names, "ManweBeamWeapon")
+	ModUtil.Table.Merge(OlympusGameData.GodAboutGodVoiceLines, { -- need new VO
+		"ManweAboutZeus01", "ManweAboutOlympians01", "ManweAboutOlympians01",
+		"ManweAboutStories01", "ManweAboutStories02", "ManweAboutOrpheus01" }
 	)
 	--Keywords
 	local OlympusKeywordList = ModUtil.Entangled.ModData(KeywordList)
-	ModUtil.Table.Merge(OlympusKeywordList, { "ApolloBlind", "FlashBomb", "DamageResist" })
+	ModUtil.Table.Merge(OlympusKeywordList, { "ManweAirborne", "ManweGust", "ManweShaken" })
     ResetKeywords()
 	
 	-- Codex Section
 	local OlympusCodexOrdering = ModUtil.Entangled.ModData(CodexOrdering)
 	local OlympusCodex = ModUtil.Entangled.ModData(Codex)
-	table.insert(OlympusCodexOrdering.OlympianGods.Order, "ApolloUpgrade")
+	table.insert(OlympusCodexOrdering.OlympianGods.Order, "ManweUpgrade")
 	
-	OlympusCodex.OlympianGods.Entries["ApolloUpgrade"] =
+	OlympusCodex.OlympianGods.Entries["ManweUpgrade"] =
 	{
 		Entries =
 		{
 			{
 				UnlockThreshold = 1,
-				Text = "CodexData_Apollo_0001"
+				Text = "CodexData_Manwe_0001"
 			},
 			{
 				UnlockThreshold = 5,
-				Text = "CodexData_Apollo_0002"
+				Text = "CodexData_Manwe_0002"
 			},
 			{
 				UnlockThreshold = 15,
-				Text = "CodexData_Apollo_0003"
+				Text = "CodexData_Manwe_0003"
 			}
 		},
-		Image = "Codex_Portrait_Apollo",
+		Image = "Codex_Portrait_Manwe",
 	}
 	
 	-- Trait Section
