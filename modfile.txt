@@ -7,6 +7,6 @@ Include "modfile_assets.txt"
 
 Import "Manwe/ManweValar.lua"
 
-Import "MiddleEarth.lua"
+Import "ValarOfArda.lua"
 
 Include "Manwe/modfile_manwe.txt"

@@ -76,6 +76,43 @@ if ModUtil ~= nil then
 	}
 	local OlympusQuestOrderData = ModUtil.Entangled.ModData(QuestOrderData)
 	table.insert(OlympusQuestOrderData, 29, "ManweUpgrades")
+
+	--ManweQuestData
+
+	-- OlympusQuestData.HomeWarmthQuest = {
+	-- 	InheritFrom = { "DefaultQuestItem" },
+	-- 	RewardResourceName = "SuperGems",
+	-- 	RewardResourceAmount = 6,
+	-- 	UnlockGameStateRequirements =
+	-- 	{
+	-- 		RequiredTextLines = { "HestiaHomeWarmthQuest01", },
+	-- 	},
+	-- 	CompleteGameStateRequirements =
+	-- 	{
+	-- 		RequiredTextLines =
+	-- 		{
+	-- 			"HestiaHomeWarmthQuest01",
+	-- 			"HestiaHomeWarmthQuest02",
+	-- 			"HestiaHomeWarmthQuest03",
+	-- 			"HestiaHomeWarmthQuest04",
+	-- 			"HestiaHomeWarmthQuest05",
+	-- 			"HestiaHomeWarmthQuest06",
+	-- 		},
+	-- 	},
+	-- 	DisplayOrder =
+	-- 	{
+	-- 		{ Requirement = "HestiaHomeWarmthQuest01", Text = "WarmthQuest01", },
+	-- 		{ Requirement = "HestiaHomeWarmthQuest02", Text = "WarmthQuest02", },
+	-- 		{ Requirement = "HestiaHomeWarmthQuest03", Text = "WarmthQuest03", },
+	-- 		{ Requirement = "HestiaHomeWarmthQuest04", Text = "WarmthQuest04", },
+	-- 		{ Requirement = "HestiaHomeWarmthQuest05", Text = "WarmthQuest05", },
+	-- 		{ Requirement = "HestiaHomeWarmthQuest06", Text = "WarmthQuest06", },
+	-- 	},
+	-- 	IncompleteName = "Quest_UnknownCondition",
+	-- }
+	-- local OlympusQuestOrderData = ModUtil.Entangled.ModData(QuestOrderData)
+	-- table.insert(OlympusQuestOrderData, 30, "HestiaUpgrades")
+	-- table.insert(OlympusQuestOrderData, 54, "HomeWarmthQuest")
 	
 	--UnitSetData
 	local OlympusEnemyData = ModUtil.Entangled.ModData(EnemyData)
@@ -107,10 +144,12 @@ if ModUtil ~= nil then
 	local OlympusWeaponSets = ModUtil.Entangled.ModData(WeaponSets)
 	local OlympusWeaponData = ModUtil.Entangled.ModData(WeaponData)
 	local OlympusEffectData = ModUtil.Entangled.ModData(EffectData)
-	table.insert(OlympusWeaponSets.ExpireProjectileExcludeProjectileNames, "ManweGust")
+
+	table.insert(OlympusWeaponSets.ExpireProjectileExcludeProjectileNames, "ManweProjectile")
 	OlympusWeaponData.ManweShoutWeapon = {
 		BlockWrathGain = true,
 	}
+	
 	OlympusWeaponData.ManweBeamWeapon = {
 		InheritFrom = { "NoSlowFrameEffect", "NoShakeEffect", "WrathWeapon", },
 		HitScreenshake = { Distance = 3, Speed = 300, Duration = 0.06, FalloffSpeed = 3000 },
@@ -143,7 +182,7 @@ if ModUtil ~= nil then
 			{ ScreenPreWait = 0.08, Fraction = 1.0, LerpTime = 0 },
 		},
 	}
-	OlympusWeaponData.TheseusApolloUpgradeWrath =
+	OlympusWeaponData.TheseusManweUpgradeWrath =
 	{
 		HitScreenshake = { Distance = 3, Speed = 1000, Duration = 0.08, FalloffSpeed = 3000 },
 		HitSimSlowParameters =
@@ -174,10 +213,10 @@ if ModUtil ~= nil then
 					CooldownName = "TheseusWrathLinesPlayedRecently",
 					SuccessiveChanceToPlay = 0.5,
 
-					-- Lord Apollo, sing for me!
-					{ Cue = "/VO/Theseus_0600" },
-					-- Lord Apollo, play me a song!
-					{ Cue = "/VO/Theseus_0601" },
+					-- King of the Valar, I beseech thee!
+					{ Cue = "/VO/Theseus_0600" }, -- need new VO
+					-- Yours, Aran Einior!
+					{ Cue = "/VO/Theseus_0601" }, -- need new VO
 				},
 				[2] = GlobalVoiceLines.TheseusWrathActivationVoiceLines,
 				[3] = HeroVoiceLines.TheseusWrathReactionVoiceLines_M,
@@ -192,7 +231,7 @@ if ModUtil ~= nil then
 			},
 		},
 	}
-	OlympusWeaponData.TheseusApolloUpgradePassive =
+	OlympusWeaponData.TheseusManweUpgradePassive =
 	{
 		HitScreenshake = { Distance = 3, Speed = 1000, Duration = 0.08, FalloffSpeed = 3000 },
 		HitSimSlowParameters =
