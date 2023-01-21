@@ -35,7 +35,7 @@
 		{
       		Id = "ManweAirborne"
 			DisplayName = "Airborne"
-			Description = "{#ItalicFormat}{$Keywords.Status}{#PreviousFormat}: Victims are lifted into the air by wind, unable to move or act for {#BoldFormatGraft}{$TooltipData.TooltipAerialDuration} Sec{#PreviousFormat}."
+			Description = "{#ItalicFormat}{$Keywords.Status}{#PreviousFormat}: Victims are lifted into the air by wind, unable to move or act for {#BoldFormatGraft}{$TooltipData.TooltipAirborneDuration} Sec{#PreviousFormat}."
 		}
 		{
       		Id = "ManweShaken"

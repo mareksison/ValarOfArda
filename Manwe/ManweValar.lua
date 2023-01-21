@@ -457,8 +457,8 @@ if ModUtil ~= nil then
 	-- Trait Section
 	local OlympusTraitData = ModUtil.Entangled.ModData(TraitData)
 	
-	OlympusTraitData.ForceApolloBoonTrait = {
-		Name = "ForceApolloBoonTrait",
+	OlympusTraitData.ForceManweBoonTrait = {
+		Name = "ForceManweBoonTrait",
 			InheritFrom = { "GiftTrait" },
 			--Inherit		
 			Frame = "Gift",
@@ -484,12 +484,12 @@ if ModUtil ~= nil then
 			--New Data
 			InRackTitle = "ForceManweBoonTrait_Rack",
 			Icon = "Keepsake_Light",
-			EquipSound = "/SFX/LightMedium",
+			EquipSound = "/SFX/Menu Sounds/KeepsakeHermesFastClear",
 			ForceBoonName = "ManweUpgrade",
 			Uses = 1,
 			RarityBonus =
 			{
-				RequiredGod = "ApolloUpgrade",
+				RequiredGod = "ManweUpgrade",
 				RareBonus = { BaseValue = 0.1 },
 				EpicBonus = 0.1,
 				LegendaryBonus = 0.1,
@@ -505,22 +505,22 @@ if ModUtil ~= nil then
 			SignOffData =
 			{
 			  {
-				Text = "ApolloSignoff",
+				Text = "ManweSignoff",
 			  },
 			  {
-				RequiredTextLines = { "ApolloGift07" },
-				Text = "ApolloSignoff_Max"
+				RequiredTextLines = { "ManweGift07" },
+				Text = "ManweSignoff_Max"
 			  }
 			},
 	}
 		
-	OlympusTraitData.ApolloWeaponTrait =
+	OlympusTraitData.ManweWeaponTrait =
 	 {
-			 Name = "ApolloWeaponTrait",
+			 Name = "ManweWeaponTrait",
 			 InheritFrom = { "ShopTier1Trait" },
-			 God = "Apollo",
+			 God = "Manwe",
 			 Slot = "Melee",
-			 Icon =  "Boon_Apollo_01",
+			 Icon =  "Boon_Manwe_01",
 			 AddOutgoingDamageModifiers =
 			 {
 				 ValidWeaponMultiplier =
@@ -546,77 +546,77 @@ if ModUtil ~= nil then
 			 {
 				 {
 					 WeaponNames = WeaponSets.HeroPhysicalWeapons,
-					 EffectName = "ApolloBlind",
+					 EffectName = "ManweAirborne",
 					 EffectProperty = "Active",
 					 ChangeValue = true,
 				 },
 				 {
 					 WeaponName = "SwordWeapon",
 					 WeaponProperty = "FireFx",
-					 ChangeValue = "SwordSwipeAFlipped-Apollo",
+					 ChangeValue = "SwordSwipeAFlipped-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
 				 {
 					 WeaponName = "SwordWeapon2",
 					 WeaponProperty = "FireFx",
-					 ChangeValue = "SwordSwipeB-Apollo",
+					 ChangeValue = "SwordSwipeB-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
 				 {
 					 WeaponName = "SwordWeapon3",
 					 WeaponProperty = "FireFx",
-					 ChangeValue = "SwordSwipeC-Apollo",
+					 ChangeValue = "SwordSwipeC-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
 				 {
 					 WeaponName = "SwordWeaponDash",
 					 WeaponProperty = "FireFx",
-					 ChangeValue = "SwordSwipeC-Apollo",
+					 ChangeValue = "SwordSwipeC-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 }, 
 				 {
 					 WeaponName = "SwordWeapon3",
 					 WeaponProperty = "ChargeFx",
-					 ChangeValue = "ChargeAttack-Apollo",
+					 ChangeValue = "ChargeAttack-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 }, 
 				 {
 					 WeaponName = "SwordWeaponDash",
 					 WeaponProperty = "ChargeFx",
-					 ChangeValue = "ChargeAttack-Apollo",
+					 ChangeValue = "ChargeAttack-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 }, 
 				 {
 					 WeaponName = "SpearWeapon",
 					 ProjectileProperty = "Graphic",
-					 ChangeValue = "SpearThrustProjectile-Apollo",
+					 ChangeValue = "SpearThrustProjectile-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
 				 {
 					 WeaponName = "SpearWeapon2",
 					 ProjectileProperty = "Graphic",
-					 ChangeValue = "SpearThrustProjectile-Apollo",
+					 ChangeValue = "SpearThrustProjectile-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
 				 {
 					 WeaponName = "SpearWeapon3",
 					 ProjectileProperty = "Graphic",
-					 ChangeValue = "SpearThrustProjectile-Apollo",
+					 ChangeValue = "SpearThrustProjectile-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
 				 {
 					 WeaponName = "SpearWeaponDash",
 					 ProjectileProperty = "Graphic",
-					 ChangeValue = "SpearDashSwipe-Apollo",
+					 ChangeValue = "SpearDashSwipe-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -624,7 +624,7 @@ if ModUtil ~= nil then
 				 {
 					 WeaponName = "SpearWeaponSpin",
 					 ProjectileProperty = "DetonateGraphic",
-					 ChangeValue = "SpearSwipe360-Apollo",
+					 ChangeValue = "SpearSwipe360-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -632,7 +632,7 @@ if ModUtil ~= nil then
 				 {
 					 WeaponName = "SpearWeaponSpin2",
 					 ProjectileProperty = "DetonateGraphic",
-					 ChangeValue = "SpearSwipe360-Apollo",
+					 ChangeValue = "SpearSwipe360-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -640,7 +640,7 @@ if ModUtil ~= nil then
 				 {
 					 WeaponName = "SpearWeaponSpin3",
 					 ProjectileProperty = "DetonateGraphic",
-					 ChangeValue = "SpearSwipe360-Apollo",
+					 ChangeValue = "SpearSwipe360-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -648,28 +648,28 @@ if ModUtil ~= nil then
 				 {
 					 WeaponName = "BowWeapon",
 					 ProjectileProperty = "Graphic",
-					 ChangeValue = "BowWeaponArrow-Apollo",
+					 ChangeValue = "BowWeaponArrow-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
 				 {
 					 WeaponName = "BowWeapon",
 					 WeaponProperty = "MinChargeStartFx",
-					 ChangeValue = "BowCharge-Apollo",
+					 ChangeValue = "BowCharge-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
 				 {
 					 WeaponName = "BowWeaponDash",
 					 ProjectileProperty = "Graphic",
-					 ChangeValue = "BowWeaponArrow-Apollo",
+					 ChangeValue = "BowWeaponArrow-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
 				 {
 					 WeaponName = "BowWeaponDash",
 					 WeaponProperty = "ChargeStartFx",
-					 ChangeValue = "BowChargeFast-Apollo",
+					 ChangeValue = "BowChargeFast-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -677,14 +677,14 @@ if ModUtil ~= nil then
 				 {
 					 WeaponName = "ShieldWeapon",
 					 ProjectileProperty = "DetonateGraphic",
-					 ChangeValue = "ShieldSwipe-Apollo",
+					 ChangeValue = "ShieldSwipe-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
 				 {
 					 WeaponName = "ShieldWeaponDash",
 					 ProjectileProperty = "DetonateGraphic",
-					 ChangeValue = "ShieldSwipeDash-Apollo",
+					 ChangeValue = "ShieldSwipeDash-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -692,7 +692,7 @@ if ModUtil ~= nil then
 				 {
 					 WeaponName = "ShieldWeaponRush",
 					 WeaponProperty = "ChargeStartFx",
-					 ChangeValue = "ShieldCharge-Apollo",
+					 ChangeValue = "ShieldCharge-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -700,7 +700,7 @@ if ModUtil ~= nil then
 				 {
 					 WeaponName = "ShieldWeaponRush",
 					 ProjectileProperty = "Graphic",
-					 ChangeValue = "ShieldRush3D-Apollo",
+					 ChangeValue = "ShieldRush3D-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -708,7 +708,7 @@ if ModUtil ~= nil then
 				 {
 					 WeaponName = "ShieldWeaponRush",
 					 ProjectileProperty = "DissipateGraphic",
-					 ChangeValue = "ShieldRush3D-Out-Apollo",
+					 ChangeValue = "ShieldRush3D-Out-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -716,7 +716,7 @@ if ModUtil ~= nil then
 				 {
 					 WeaponName = "GunWeapon",
 					 ProjectileProperty = "Graphic",
-					 ChangeValue = "GunWeaponProjectile-Apollo",
+					 ChangeValue = "GunWeaponProjectile-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -724,7 +724,7 @@ if ModUtil ~= nil then
 				 {
 					 WeaponName = "GunWeapon",
 					 WeaponProperty = "FireFx",
-					 ChangeValue = "GunFire-Apollo",
+					 ChangeValue = "GunFire-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -732,7 +732,7 @@ if ModUtil ~= nil then
 				 {
 					 WeaponName = "GunWeapon",
 					 ProjectileProperty = "ImpactFx",
-					 ChangeValue = "GunWeaponImpact-Apollo",
+					 ChangeValue = "GunWeaponImpact-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -740,7 +740,7 @@ if ModUtil ~= nil then
 				 {
 					 WeaponName = "GunWeaponDash",
 					 ProjectileProperty = "Graphic",
-					 ChangeValue = "GunWeaponProjectile-Apollo",
+					 ChangeValue = "GunWeaponProjectile-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -748,7 +748,7 @@ if ModUtil ~= nil then
 				 {
 					 WeaponName = "GunWeaponDash",
 					 WeaponProperty = "FireFx",
-					 ChangeValue = "GunFire-Apollo",
+					 ChangeValue = "GunFire-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -756,7 +756,7 @@ if ModUtil ~= nil then
 				 {
 					 WeaponName = "GunWeaponDash",
 					 ProjectileProperty = "ImpactFx",
-					 ChangeValue = "GunWeaponImpact-Apollo",
+					 ChangeValue = "GunWeaponImpact-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -764,7 +764,7 @@ if ModUtil ~= nil then
 				 {
 					 WeaponNames = { "FistWeapon", "FistWeapon2", "FistWeapon3", "FistWeapon4", "FistWeapon5" },
 					 ProjectileProperty = "Graphic",
-					 ChangeValue = "FistFxApollo",
+					 ChangeValue = "FistFxManwe",
 					 ChangeType = "Absolute"
 				 },
 				 {
@@ -778,7 +778,7 @@ if ModUtil ~= nil then
 					 TraitName = "SwordConsecrationTrait",
 					 WeaponNames = { "SwordWeapon" },
 					 WeaponProperty = "FireFx",
-					 ChangeValue = "SwordSwipeC-Apollo-Arthur",
+					 ChangeValue = "SwordSwipeC-Manwe-Arthur",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -786,7 +786,7 @@ if ModUtil ~= nil then
 					 TraitName = "SwordConsecrationTrait",
 					 WeaponNames = { "SwordWeapon2" },
 					 WeaponProperty = "ChargeFx",
-					 ChangeValue = "ChargeAttack-Apollo",
+					 ChangeValue = "ChargeAttack-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -794,7 +794,7 @@ if ModUtil ~= nil then
 					 TraitName = "SwordConsecrationTrait",
 					 WeaponNames = { "SwordWeapon2" },
 					 WeaponProperty = "FireFx",
-					 ChangeValue = "SwordSwipeA-Apollo-Arthur",
+					 ChangeValue = "SwordSwipeA-Manwe-Arthur",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -802,7 +802,7 @@ if ModUtil ~= nil then
 					 TraitName = "SwordConsecrationTrait",
 					 WeaponNames = { "SwordWeapon3" },
 					 WeaponProperty = "FireFx",
-					 ChangeValue = "SwordSwipeAFlipped-Apollo-Arthur",
+					 ChangeValue = "SwordSwipeAFlipped-Manwe-Arthur",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -810,7 +810,7 @@ if ModUtil ~= nil then
 					 TraitName = "SwordConsecrationTrait",
 					 WeaponNames = { "SwordWeapon3" },
 					 WeaponProperty = "ChargeFx",
-					 ChangeValue = "ChargeAttack-Apollo",
+					 ChangeValue = "ChargeAttack-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -818,7 +818,7 @@ if ModUtil ~= nil then
 					 TraitName = "SwordConsecrationTrait",
 					 WeaponNames = { "SwordWeaponDash" },
 					 WeaponProperty = "FireFx",
-					 ChangeValue = "SwordSwipeC-Apollo-Arthur",
+					 ChangeValue = "SwordSwipeC-Manwe-Arthur",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -827,7 +827,7 @@ if ModUtil ~= nil then
 					 TraitName = "BowBondTrait",
 					 WeaponName = "BowWeapon",
 					 WeaponProperty = "MinChargeStartFx",
-					 ChangeValue = "BowChargeRama-Apollo",
+					 ChangeValue = "BowChargeRama-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -836,7 +836,7 @@ if ModUtil ~= nil then
 					 TraitName = "BowBondTrait",
 					 WeaponName = "BowWeaponDash",
 					 WeaponProperty = "ChargeStartFx",
-					 ChangeValue = "BowChargeRamaDash-Apollo",
+					 ChangeValue = "BowChargeRamaDash-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -845,7 +845,7 @@ if ModUtil ~= nil then
 					 TraitName = "BowBondTrait",
 					 WeaponNames = { "BowWeapon", "BowWeaponDash" },
 					 ProjectileProperty = "AttachedAnim",
-					 ChangeValue = "RamaWideShot-Apollo",
+					 ChangeValue = "RamaWideShot-Manwe",
 					 ChangeType = "Absoawlute",
 					 ExcludeLinked = true,
 				 },
@@ -854,7 +854,7 @@ if ModUtil ~= nil then
 					 TraitName = "GunLoadedGrenadeTrait",
 					 WeaponName = "GunWeapon",
 					 ProjectileProperty = "Graphic",
-					 ChangeValue = "GunLaser-Apollo",
+					 ChangeValue = "GunLaser-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -862,7 +862,7 @@ if ModUtil ~= nil then
 					 TraitName = "GunLoadedGrenadeTrait",
 					 WeaponName = "GunWeapon",
 					 ProjectileProperty = "AttachedAnim",
-					 ChangeValue = "GunLaserOriginFlare-Apollo",
+					 ChangeValue = "GunLaserOriginFlare-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -870,7 +870,7 @@ if ModUtil ~= nil then
 					 TraitName = "GunLoadedGrenadeTrait",
 					 WeaponName = "GunWeapon",
 					 ProjectileProperty = "TipFx",
-					 ChangeValue = "GunLaserTipFlare-Apollo",
+					 ChangeValue = "GunLaserTipFlare-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -878,7 +878,7 @@ if ModUtil ~= nil then
 					 TraitName = "GunLoadedGrenadeTrait",
 					 WeaponName = "GunWeapon",
 					 WeaponProperty = "ChargeStartFx",
-					 ChangeValue = "GunCharge-Apollo",
+					 ChangeValue = "GunCharge-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -894,7 +894,7 @@ if ModUtil ~= nil then
 					 TraitName = "GunLoadedGrenadeTrait",
 					 WeaponName = "GunWeapon",
 					 ProjectileProperty = "DissipateGraphic",
-					 ChangeValue = "GunLaserEnd-Apollo",
+					 ChangeValue = "GunLaserEnd-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -903,7 +903,7 @@ if ModUtil ~= nil then
 					 TraitName = "ShieldLoadAmmoTrait",
 					 WeaponName = "ShieldWeapon",
 					 ProjectileProperty = "DetonateGraphic",
-					 ChangeValue = "BeowulfShieldSlam-Apollo",
+					 ChangeValue = "BeowulfShieldSlam-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -912,7 +912,7 @@ if ModUtil ~= nil then
 					 TraitName = "BowMarkHomingTrait",
 					 WeaponNames = { "BowWeapon" },
 					 ProjectileProperty = "Graphic",
-					 ChangeValue = "BowWeaponArrow-Apollo-Alt01",
+					 ChangeValue = "BowWeaponArrow-Manwe-Alt01",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -920,7 +920,7 @@ if ModUtil ~= nil then
 					 TraitName = "BowLoadAmmoTrait",
 					 WeaponNames = { "BowWeapon" },
 					 ProjectileProperty = "Graphic",
-					 ChangeValue = "BowWeaponArrow-Apollo-Alt02",
+					 ChangeValue = "BowWeaponArrow-Manwe-Alt02",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -929,7 +929,7 @@ if ModUtil ~= nil then
 					 WeaponNames = { "FistWeapon", "FistWeapon3", "FistWeapon5" },
 					 TraitName = "FistDetonateTrait",
 					 WeaponProperty = "FireFx",
-					 ChangeValue = "ClawSwipe-Apollo",
+					 ChangeValue = "ClawSwipe-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -937,7 +937,7 @@ if ModUtil ~= nil then
 					 WeaponNames = { "FistWeapon2", "FistWeapon4" },
 					 TraitName = "FistDetonateTrait",
 					 WeaponProperty = "FireFx",
-					 ChangeValue = "ClawSwipeFlipped-Apollo",
+					 ChangeValue = "ClawSwipeFlipped-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -951,7 +951,7 @@ if ModUtil ~= nil then
 				 {
 					 WeaponNames = { "FistWeaponDash" },
 					 ProjectileProperty = "StartFx",
-					 ChangeValue = "ClawSwipeFlippedDash-Apollo",
+					 ChangeValue = "ClawSwipeFlippedDash-Manwe",
 					 ChangeType = "Absolute",
 					 ExcludeLinked = true,
 				 },
@@ -960,23 +960,13 @@ if ModUtil ~= nil then
 			 ExtractValues =
 			 {
 				{
-					ExtractAs = "TooltipBlindDuration",
+					ExtractAs = "TooltipAirborneDuration",
 					SkipAutoExtract = true,
 					External = true,
 					BaseType = "Effect",
 					WeaponName = "SwordWeapon",
-					BaseName = "ApolloBlind",
+					BaseName = "ManweAirborne",
 					BaseProperty = "Duration",
-				},
-				{
-					ExtractAs = "TooltipBlindPower",
-					SkipAutoExtract = true,
-					External = true,
-					BaseType = "Effect",
-					WeaponName = "SwordWeapon",
-					BaseName = "ApolloBlind",
-					BaseProperty = "Amount",
-					Format = "Percent"
 				}
 			 }
 	 } 
