@@ -1675,88 +1675,131 @@ if ModUtil ~= nil then
 			}
 		}
 		
-	OlympusTraitData.ShieldLoadAmmo_ApolloRangedTrait = 
+	OlympusTraitData.ShieldLoadAmmo_ManweRangedTrait = 
 	{
 		InheritFrom = {"ManweRangedTrait"},
 		Skip = true,
 		CustomTrayText = "ShieldLoadAmmo_ManweRangedTrait_Tray",
         RequiredOneOfTraits = { "BowLoadAmmoTrait", "ShieldLoadAmmoTrait" }
 	}
-	OlympusTraitData.ApolloShoutTrait =
+	OlympusTraitData.ManweShoutTrait =
 	{
-			InheritFrom = { "ShopTier1Trait" },
-			RequiredTextLines = { "PoseidonWrathIntro01" },
-			CustomTrayText = "ApolloShoutTrait_Tray",
-			God = "Apollo",
-			Slot = "Shout",
-			Icon = "Boon_Apollo_06",
-			RarityLevels =
+		InheritFrom = { "ShopTier1Trait" },
+		RequiredTextLines = { "PoseidonWrathIntro01" },
+		CustomTrayText = "ManweShoutTrait_Tray",
+		God = "Manwë",
+		Slot = "Shout",
+		Icon = "Boon_Manwe_06",
+		RarityLevels =
+		{
+			Common =
 			{
-				Common =
-				{
-					Multiplier = 1.0,
-				},
-				Rare =
-				{
-					Multiplier = 1.1,
-				},
-				Epic =
-				{
-					Multiplier = 1.2,
-				},
-				Heroic =
-				{
-					Multiplier = 1.3,
-				}
+				Multiplier = 1.0,
 			},
-			AddShout =
+			Rare =
 			{
-				FunctionName = "ApolloShout",
-				Cost = 25,
-				SuperDuration = 3,
-				MaxDurationMultiplier = 3,
-				ExtractValues =
-				{
-					{
-						Key = "Cost",
-						ExtractAs = "TooltipWrathStocks",
-						Format = "WrathStocks",
-						SkipAutoExtract = true
-					},
-					{
-						Key = "MaxDurationMultiplier",
-						ExtractAs = "TooltipDuration",
-						Format = "EXWrathDuration",
-						DecimalPlaces = 2,
-						SkipAutoExtract = true
-					}
-				}
+				Multiplier = 1.1,
 			},
-			EndShout = "EndApolloBeam",
-			PreEquipWeapons = { "ApolloBeamWeapon", "ShoutEndApollo"},-- "ApolloBeamAim" },
-			PropertyChanges =
+			Epic =
 			{
-				{
-					WeaponName = "ApolloBeamWeapon",
-					ProjectileProperty = "DamageLow",
-					BaseMin = 15,
-					BaseMax = 15,
-					DepthMult = DepthDamageMultiplier,
-					IdenticalMultiplier =
-					{
-						Value = DuplicateMultiplier,
-					},
-					ExtractValue =
-					{
-						ExtractAs = "TooltipDamage",
-					}
-				},
-				{
-					WeaponName = "ApolloBeamWeapon",
-					ProjectileProperty = "DamageHigh",
-					DeriveValueFrom = "DamageLow"
-				},
+				Multiplier = 1.2,
+			},
+			Heroic =
+			{
+				Multiplier = 1.3,
 			}
+		},
+		AddShout =
+		{
+			FunctionName = "ManweShout",
+			MaxFunctionName = "ManweMaxShout",
+			Cost = 25,
+			MaxDurationMultiplier = 2,
+			SuperDuration = 5,
+			IsBurst = true,
+			ExtractValues =
+			{
+				{
+					Key = "Cost",
+					ExtractAs = "TooltipWrathStocks",
+					Format = "WrathStocks",
+					SkipAutoExtract = true
+				},
+				{
+					Key = "MaxDurationMultiplier",
+					ExtractAs = "TooltipDuration",
+					Format = "EXWrathDuration",
+					DecimalPlaces = 2,
+					SkipAutoExtract = true
+				}
+			}
+		},
+		EndShout = "EndManwe",
+		PreEquipWeapons = { "ManweSuper", "ManweMaxSuper", },
+		PropertyChanges =
+		{
+			{
+				WeaponNames = { "ManweSuper", "ManweMaxSuper", },
+				ProjectileProperty = "DamageLow",
+				BaseMin = 10,
+				BaseMax = 10,
+				MinMultiplier = 0.2,
+				IdenticalMultiplier =
+				{
+					Value = DuplicateMultiplier,
+				},
+				ExtractValue =
+				{
+					ExtractAs = "TooltipDamage",
+				}
+			},
+			{
+				WeaponNames = { "ManweSuper", "ManweMaxSuper", },
+				ProjectileProperty = "DamageHigh",
+				DeriveValueFrom = "DamageLow"
+			},
+			{
+				WeaponNames = { "ManweSuper", "ManweMaxSuper", },
+				ProjectileProperty = "Fuse",
+				ChangeValue = 0.25,
+				ExtractValue =
+				{
+					ExtractAs = "TooltipInterval",
+					SkipAutoExtract = true,
+					DecimalPlaces = 2,
+				}
+			},
+		},
+		ExtractValues =
+		{
+			{
+				ExtractAs = "TooltipAirborneDuration",
+				SkipAutoExtract = true,
+				External = true,
+				BaseType = "Effect",
+				WeaponName = "SwordWeapon",
+				BaseName = "ManweAirborne",
+				BaseProperty = "Duration",
+			},
+			{
+				ExtractAs = "TooltipGustDuration",
+				SkipAutoExtract = true,
+				External = true,
+				BaseType = "Effect",
+				WeaponName = "SwordWeapon",
+				BaseName = "ManweGust",
+				BaseProperty = "Duration",
+			},
+			{
+				ExtractAs = "TooltipGustDamage",
+				SkipAutoExtract = true,
+				External = true,
+				BaseType = "Effect",
+				WeaponName = "SwordWeapon",
+				BaseName = "ManweGust",
+				BaseProperty = "Damage",
+			},
+		}
 	}
 	OlympusTraitData.FountainDefenseTrait =
 	{
