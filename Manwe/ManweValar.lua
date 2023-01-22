@@ -339,8 +339,8 @@ if ModUtil ~= nil then
 		PreLineWait = 0.65,
 		SuccessiveChanceToPlayAll = 0.33,
 		RequiredFalseEncounters = { "DevotionTestTartarus", "DevotionTestAsphodel", "DevotionTestElysium", },
-		RequiredSwappedGodLoot = "ApolloUpgrade",
-		CooldownName = "SaidApolloRecently",
+		RequiredSwappedGodLoot = "ManweUpgrade",
+		CooldownName = "SaidManweRecently",
 		CooldownTime = 40,
 
 		-- I'm sure King Manwë won't mind.
@@ -1801,6 +1801,67 @@ if ModUtil ~= nil then
 			},
 		}
 	}
+	OlympusTraitData.ManaRevengeTrait =
+	 {
+		God = "Manwë",
+		InheritFrom = { "ShopTier1Trait" },
+		AddOnHitWeapons = { "AreaWeakenManwe" },
+		Icon = "Boon_Manwe_09",
+		RarityLevels =
+		{
+			Common =
+			{
+				Multiplier = 1.00,
+			},
+			Rare =
+			{
+				Multiplier = 1.25,
+			},
+			Epic =
+			{
+				Multiplier = 1.50,
+			},
+			Heroic =
+			{
+				Multiplier = 1.75,
+			}
+		},
+		PropertyChanges =
+		{
+			{
+				WeaponName = "AreaWeakenManwe",
+				ProjectileProperty = "DamageLow",
+				BaseMin = 50,
+				BaseMax = 50,
+				DepthMult = DepthDamageMultiplier,
+				IdenticalMultiplier =
+				{
+					Value = DuplicateVeryStrongMultiplier,
+				},
+				ExtractValue =
+				{
+					ExtractAs = "TooltipDamage",
+				}
+			},
+			{
+				WeaponName = "AreaWeakenManwe",
+				ProjectileProperty = "DamageHigh",
+				DeriveValueFrom = "DamageLow",
+			},
+		},
+		ExtractValues =
+		{
+			{
+				ExtractAs = "TooltipBlindDuration",
+				SkipAutoExtract = true,
+				External = true,
+				BaseType = "Effect",
+				WeaponName = "SwordWeapon",
+				BaseName = "ManweGust",
+				BaseProperty = "Duration",
+			}
+		}
+	}
 	OlympusTraitData.FountainDefenseTrait =
 	{
 		Icon = "Boon_Apollo_07",
@@ -1970,77 +2031,6 @@ if ModUtil ~= nil then
 				EffectProperty = "Modifier",
 				DeriveValueFrom = "DeriveSource",
 			},			
-		},
-		ExtractValues =
-		{
-			{
-				ExtractAs = "TooltipBlindDuration",
-				SkipAutoExtract = true,
-				External = true,
-				BaseType = "Effect",
-				WeaponName = "SwordWeapon",
-				BaseName = "ApolloBlind",
-				BaseProperty = "Duration",
-			},
-			{
-				ExtractAs = "TooltipBlindPower",
-				SkipAutoExtract = true,
-				External = true,
-				BaseType = "Effect",
-				WeaponName = "SwordWeapon",
-				BaseName = "ApolloBlind",
-				BaseProperty = "Amount",
-				Format = "Percent"
-			}
-		}
-	}
-	OlympusTraitData.ApolloRetaliateTrait =
-	 {
-		God = "Apollo",
-		InheritFrom = { "ShopTier1Trait" },
-		AddOnHitWeapons = { "AreaWeakenApollo" },
-		Icon = "Boon_Apollo_09",
-		RarityLevels =
-		{
-			Common =
-			{
-				Multiplier = 1.00,
-			},
-			Rare =
-			{
-				Multiplier = 1.25,
-			},
-			Epic =
-			{
-				Multiplier = 1.50,
-			},
-			Heroic =
-			{
-				Multiplier = 1.75,
-			}
-		},
-		PropertyChanges =
-		{
-			{
-				WeaponName = "AreaWeakenApollo",
-				ProjectileProperty = "DamageLow",
-				BaseMin = 50,
-				BaseMax = 50,
-				DepthMult = DepthDamageMultiplier,
-				IdenticalMultiplier =
-				{
-					Value = DuplicateVeryStrongMultiplier,
-				},
-				ExtractValue =
-				{
-					ExtractAs = "TooltipDamage",
-				}
-			},
-			{
-				WeaponName = "AreaWeakenApollo",
-				ProjectileProperty = "DamageHigh",
-				DeriveValueFrom = "DamageLow",
-			},
 		},
 		ExtractValues =
 		{
