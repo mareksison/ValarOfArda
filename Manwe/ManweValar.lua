@@ -49,7 +49,7 @@ if ModUtil ~= nil then
 				"ManweSecondaryTrait",
 				"ManweShoutTrait",
 				
-				"ManweRevengeTrait",
+				"ManweRetaliateTrait",
 				"ManweShakenTrait",
 				"ManweAirborneTrait",
 				"ManweGustTrait",			
@@ -407,7 +407,7 @@ if ModUtil ~= nil then
 				"ManweRangedTrait",
 				"ManweShoutTrait",
 
-				"ManweRevengeTrait",
+				"ManweRetaliateTrait",
 				"ManweShakenTrait", "ManweAirborneTrait",
 				"ManweGustTrait", "ManweVortexTrait",
 
@@ -1801,7 +1801,7 @@ if ModUtil ~= nil then
 			},
 		}
 	}
-	OlympusTraitData.ManaRevengeTrait =
+	OlympusTraitData.ManweRetaliateTrait =
 	 {
 		God = "Manwë",
 		InheritFrom = { "ShopTier1Trait" },
@@ -2065,6 +2065,278 @@ if ModUtil ~= nil then
 				WeaponName = "SwordWeapon",
 				BaseName = "ManweAirborne",
 				BaseProperty = "Duration",
+			}
+		}
+	}
+	OlympusTraitData.ManweGustTrait =
+	{
+		Name = "ApolloBlindedTrait",
+		God = "Apollo",
+		InheritFrom = { "ShopTier2Trait" },
+		Icon = "Boon_Apollo_10",
+		RarityLevels =
+		{
+			Common =
+			{
+				Multiplier = 1.0,
+			},
+			Rare =
+			{
+				Multiplier = 1.5,
+			},
+			Epic =
+			{
+				Multiplier = 2.0,
+			},
+			Heroic =
+			{
+				Multiplier = 2.5,
+			}
+		},
+		PropertyChanges =
+		{
+			{
+				TraitName = "ApolloWeaponTrait",
+				WeaponNames = WeaponSets.HeroPhysicalWeapons,
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Active",
+				ChangeValue = true,
+			},
+			{
+				TraitName = "ApolloRangedTrait",
+				WeaponNames = WeaponSets.HeroNonPhysicalWeapons,
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Active",
+				ChangeValue = true,
+			},
+			{
+				TraitName = "AreaWeakenApollo",
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Active",
+				ChangeValue = true,
+			},
+			{
+				TraitName = "ShieldLoadAmmo_ApolloRangedTrait",
+				WeaponNames = WeaponSets.HeroNonPhysicalWeapons,
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Active",
+				ChangeValue = true,
+			},
+			{
+				WeaponNames = WeaponSets.HeroPhysicalWeapons,
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Modifier",
+				BaseMin = 0.10,
+				BaseMax = 0.10,
+				IdenticalMultiplier =
+				{
+					Value = DuplicateMultiplier,
+				},
+				ExtractValue =
+				{
+					ExtractAs = "TooltipDamage",
+					Format = "Percent",
+				},
+				ChangeType = "Add",
+				DeriveSource = "DeriveSource"
+			},
+			{
+				WeaponNames = { "AreaWeakenApollo" },
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Modifier",
+				DeriveValueFrom = "DeriveSource",
+			},
+			{
+				WeaponNames = WeaponSets.HeroNonPhysicalWeapons,
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Modifier",
+				DeriveValueFrom = "DeriveSource",
+			},
+			{
+				TraitName = "ApolloDashTrait",
+				WeaponNames = WeaponSets.HeroRushWeapons,
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Active",
+				ChangeValue = true,
+			},
+			{
+				TraitName = "ApolloDashTrait",
+				WeaponNames = WeaponSets.HeroRushWeapons,
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Modifier",
+				DeriveValueFrom = "DeriveSource",
+			},
+			{
+				TraitName = "ApolloSecondaryTrait",
+				WeaponNames = WeaponSets.HeroSecondaryWeapons,
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Active",
+				ChangeValue = true,
+			},
+			{
+				TraitName = "ApolloSecondaryTrait",
+				WeaponNames = WeaponSets.HeroSecondaryWeapons,
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Modifier",
+				DeriveValueFrom = "DeriveSource",
+			},
+		},
+		ExtractValues =
+		{
+			{
+				ExtractAs = "TooltipBlindDuration",
+				SkipAutoExtract = true,
+				External = true,
+				BaseType = "Effect",
+				WeaponName = "SwordWeapon",
+				BaseName = "ApolloBlind",
+				BaseProperty = "Duration",
+			},
+			{
+				ExtractAs = "TooltipBlindPower",
+				SkipAutoExtract = true,
+				External = true,
+				BaseType = "Effect",
+				WeaponName = "SwordWeapon",
+				BaseName = "ApolloBlind",
+				BaseProperty = "Amount",
+				Format = "Percent"
+			}
+		}
+	}
+	OlympusTraitData.ManweVortexTrait =
+	{
+		Name = "ManweVortexTrait",
+		God = "Apollo",
+		InheritFrom = { "ShopTier2Trait" },
+		Icon = "Boon_Apollo_11",
+		RarityLevels =
+		{
+			Common =
+			{
+				Multiplier = 1.0,
+			},
+			Rare =
+			{
+				Multiplier = 1.5,
+			},
+			Epic =
+			{
+				Multiplier = 2.0,
+			},
+			Heroic =
+			{
+				Multiplier = 2.5,
+			}
+		},
+		PropertyChanges =
+		{
+			{
+				TraitName = "ApolloWeaponTrait",
+				WeaponNames = WeaponSets.HeroPhysicalWeapons,
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Active",
+				ChangeValue = true,
+			},
+			{
+				TraitName = "ApolloRangedTrait",
+				WeaponNames = WeaponSets.HeroNonPhysicalWeapons,
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Active",
+				ChangeValue = true,
+			},
+			{
+				TraitName = "AreaWeakenApollo",
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Active",
+				ChangeValue = true,
+			},
+			{
+				TraitName = "ShieldLoadAmmo_ApolloRangedTrait",
+				WeaponNames = WeaponSets.HeroNonPhysicalWeapons,
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Active",
+				ChangeValue = true,
+			},
+			{
+				WeaponNames = WeaponSets.HeroPhysicalWeapons,
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Modifier",
+				BaseMin = 0.10,
+				BaseMax = 0.10,
+				IdenticalMultiplier =
+				{
+					Value = DuplicateMultiplier,
+				},
+				ExtractValue =
+				{
+					ExtractAs = "TooltipDamage",
+					Format = "Percent",
+				},
+				ChangeType = "Add",
+				DeriveSource = "DeriveSource"
+			},
+			{
+				WeaponNames = { "AreaWeakenApollo" },
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Modifier",
+				DeriveValueFrom = "DeriveSource",
+			},
+			{
+				WeaponNames = WeaponSets.HeroNonPhysicalWeapons,
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Modifier",
+				DeriveValueFrom = "DeriveSource",
+			},
+			{
+				TraitName = "ApolloDashTrait",
+				WeaponNames = WeaponSets.HeroRushWeapons,
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Active",
+				ChangeValue = true,
+			},
+			{
+				TraitName = "ApolloDashTrait",
+				WeaponNames = WeaponSets.HeroRushWeapons,
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Modifier",
+				DeriveValueFrom = "DeriveSource",
+			},
+			{
+				TraitName = "ApolloSecondaryTrait",
+				WeaponNames = WeaponSets.HeroSecondaryWeapons,
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Active",
+				ChangeValue = true,
+			},
+			{
+				TraitName = "ApolloSecondaryTrait",
+				WeaponNames = WeaponSets.HeroSecondaryWeapons,
+				EffectName = "IncreaseDamageTaken",
+				EffectProperty = "Modifier",
+				DeriveValueFrom = "DeriveSource",
+			},
+		},
+		ExtractValues =
+		{
+			{
+				ExtractAs = "TooltipBlindDuration",
+				SkipAutoExtract = true,
+				External = true,
+				BaseType = "Effect",
+				WeaponName = "SwordWeapon",
+				BaseName = "ApolloBlind",
+				BaseProperty = "Duration",
+			},
+			{
+				ExtractAs = "TooltipBlindPower",
+				SkipAutoExtract = true,
+				External = true,
+				BaseType = "Effect",
+				WeaponName = "SwordWeapon",
+				BaseName = "ApolloBlind",
+				BaseProperty = "Amount",
+				Format = "Percent"
 			}
 		}
 	}
