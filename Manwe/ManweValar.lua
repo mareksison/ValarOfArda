@@ -970,35 +970,35 @@ if ModUtil ~= nil then
 				}
 			 }
 	 } 
-	 OlympusTraitData.ShieldLoadAmmoTrait.AnimDefinitions.ApolloWeaponTrait =
+	 OlympusTraitData.ShieldLoadAmmoTrait.AnimDefinitions.ManweWeaponTrait =
 	 {
 		 Unloaded =
 		 {
-			 Graphic = "ShieldRush3DBeowulf-Apollo",
-			 DissipateGraphic = "ShieldRush3DBeowulf-Out-Apollo",
+			 Graphic = "ShieldRush3DBeowulf-Manwe",
+			 DissipateGraphic = "ShieldRush3DBeowulf-Out-Manwe",
 			 StartFx = "null",
 			 StartFx2 = "null",
 			 AttachedAnim = "null",
 		 },
 		 Loaded =
 		 {
-			 Graphic = "ShieldRush3DBeowulf-Apollo",
-			 DissipateGraphic = "ShieldRush3DBeowulf-Out-Apollo",
+			 Graphic = "ShieldRush3DBeowulf-Manwe",
+			 DissipateGraphic = "ShieldRush3DBeowulf-Out-Manwe",
 			 StartFx = "null",
 			 StartFx2 = "null",
-			 AttachedAnim = "ShieldRush3DBeowulfMax-Apollo",
+			 AttachedAnim = "ShieldRush3DBeowulfMax-Manwe",
 		 },
 	}
 	table.insert(OlympusTraitData.GunShotgunTrait.PropertyChanges,{
-		TraitName = "ApolloWeaponTrait",
+		TraitName = "ManweWeaponTrait",
 		WeaponNames = { "GunWeapon", "GunWeaponDash" },
 		ProjectileProperty = "StartFx",
-		ChangeValue = "GunShotgunBlastRandomFlip-Apollo",
+		ChangeValue = "GunShotgunBlastRandomFlip-Manwe",
 		ChangeType = "Absolute",
 		ExcludeLinked = true,
 	})
 	table.insert(OlympusTraitData.GunShotgunTrait.PropertyChanges,{
-		TraitName = "ApolloWeaponTrait",
+		TraitName = "ManweWeaponTrait",
 		WeaponNames = { "GunWeapon", "GunWeaponDash" },
 		ProjectileProperty = "ImpactFx",
 		ChangeValue = "null",
@@ -1007,27 +1007,27 @@ if ModUtil ~= nil then
 	})
 	table.insert(OlympusTraitData.GunHomingBulletTrait.PropertyChanges,{
 		WeaponNames = { "GunWeapon", "GunWeaponDash" },
-		TraitName = "ApolloWeaponTrait",
+		TraitName = "ManweWeaponTrait",
 		ProjectileProperty = "Graphic",
-		ChangeValue = "GunWeaponProjectile_Homing-Apollo",
+		ChangeValue = "GunWeaponProjectile_Homing-Manwe",
 		ChangeType = "Absolute",
 		ExcludeLinked = true,
 	})
 	table.insert(OlympusTraitData.FistReachAttackTrait.PropertyChanges,{
-		TraitName = "ApolloWeaponTrait",
+		TraitName = "ManweWeaponTrait",
 		WeaponNames = { "FistWeapon", "FistWeapon2", "FistWeapon3", "FistWeapon4", "FistWeapon5" },
 		ProjectileProperty = "Graphic",
-		ChangeValue = "FistFxApollo_Reach",
+		ChangeValue = "FistFxManwe_Reach",
 		ChangeType = "Absolute",
 		ExcludeLinked = true,
 	})
-	OlympusTraitData.ApolloSecondaryTrait =
+	OlympusTraitData.ManweSecondaryTrait =
 	 {
-		 Name = "ApolloSecondaryTrait",
+		 Name = "ManweSecondaryTrait",
 		 InheritFrom = { "ShopTier1Trait" },
-		 God = "Apollo",
+		 God = "Manwe",
 		 Slot = "Secondary",
-		 Icon =  "Boon_Apollo_02",
+		 Icon =  "Boon_Manwe_02",
 		 AddOutgoingDamageModifiers =
 		 {
 			 ValidWeaponMultiplier =
@@ -1053,7 +1053,7 @@ if ModUtil ~= nil then
 		 {
 			 {
 				 WeaponNames = WeaponSets.HeroSecondaryWeapons,
-				 EffectName = "ApolloBlind",
+				 EffectName = "ManweAirborne",
 				 EffectProperty = "Active",
 				 ChangeValue = true,
 			 },
@@ -1061,7 +1061,7 @@ if ModUtil ~= nil then
 			 {
 				 WeaponName = "SwordParry",
 				 ProjectileProperty = "DetonateGraphic",
-				 ChangeValue = "RadialNovaSwordParry-Apollo",
+				 ChangeValue = "RadialNovaSwordParry-Manwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1069,7 +1069,7 @@ if ModUtil ~= nil then
 			 {
 				 WeaponName = "SpearWeaponThrow",
 				 ProjectileProperty = "Graphic",
-				 ChangeValue = "SpearThrowProjectile-Apollo",
+				 ChangeValue = "SpearThrowProjectile-Manwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1077,14 +1077,14 @@ if ModUtil ~= nil then
 			 {
 				 WeaponName = "SpearWeaponThrowReturn",
 				 ProjectileProperty = "Graphic",
-				 ChangeValue = "SpearThrowProjectile-Apollo",
+				 ChangeValue = "SpearThrowProjectile-Manwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
 			 {
 				 WeaponName = "BowSplitShot",
 				 ProjectileProperty = "Graphic",
-				 ChangeValue = "BowWeaponArrow-Apollo-SplitShot",
+				 ChangeValue = "BowWeaponArrow-Manwe-SplitShot",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1092,7 +1092,7 @@ if ModUtil ~= nil then
 			 {
 				 WeaponName = "BowSplitShot",
 				 WeaponProperty = "MinChargeStartFx",
-				 ChangeValue = "BowCharge-Apollo",
+				 ChangeValue = "BowCharge-Manwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1101,7 +1101,7 @@ if ModUtil ~= nil then
 				 WeaponNames = { "ShieldThrow", },
 				 ProjectileName = "ShieldThrow",
 				 ProjectileProperty = "DetonateGraphic",
-				 ChangeValue = "ShieldSwipe-Apollo",
+				 ChangeValue = "ShieldSwipe-Manwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1109,7 +1109,7 @@ if ModUtil ~= nil then
 				 WeaponNames = { "ShieldThrowDash" },
 				 ProjectileName = "ShieldThrowDash",
 				 ProjectileProperty = "DetonateGraphic",
-				 ChangeValue = "ShieldSwipe-Apollo",
+				 ChangeValue = "ShieldSwipe-Manwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1117,7 +1117,7 @@ if ModUtil ~= nil then
 			 {
 				 WeaponNames = { "ShieldThrow", "ShieldThrowDash" },
 				 WeaponProperty = "ChargeStartFx",
-				 ChangeValue = "ShieldCharge-Apollo",
+				 ChangeValue = "ShieldCharge-Manwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1125,7 +1125,7 @@ if ModUtil ~= nil then
 			 {
 				 WeaponNames = { "ShieldThrow", "ShieldThrowDash" },
 				 ProjectileProperty = "Graphic",
-				 ChangeValue = "ProjectileShield-Apollo",
+				 ChangeValue = "ProjectileShield-Manwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1133,7 +1133,7 @@ if ModUtil ~= nil then
 				 TraitName = "ShieldRushBonusProjectileTrait",
 				 ProjectileProperty = "Graphic",
 				 WeaponNames = { "ShieldThrow", "ShieldThrowDash", "ChaosShieldThrow" },
-				 ChangeValue = "ProjectileShieldAlt01-Apollo",
+				 ChangeValue = "ProjectileShieldAlt01-Manwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1141,7 +1141,7 @@ if ModUtil ~= nil then
 				 TraitName = "ShieldLoadAmmoTrait",
 				 ProjectileProperty = "Graphic",
 				 WeaponNames = { "ShieldThrow", "ShieldThrowDash", "ChaosShieldThrow" },
-				 ChangeValue = "ProjectileShieldAlt03-Apollo",
+				 ChangeValue = "ProjectileShieldAlt03-Manwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1149,7 +1149,7 @@ if ModUtil ~= nil then
 				 TraitName = "ShieldTwoShieldTrait",
 				 ProjectileProperty = "Graphic",
 				 WeaponName = "ShieldThrow",
-				 ChangeValue = "ProjectileShieldAlt02-Apollo",
+				 ChangeValue = "ProjectileShieldAlt02-Manwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1158,14 +1158,14 @@ if ModUtil ~= nil then
 				 WeaponName = "ShieldThrow",
 				 ProjectileName = "ShieldThrow",
 				 ProjectileProperty = "DetonateGraphic",
-				 ChangeValue = "ShieldThrowTrailMirage-Apollo",
+				 ChangeValue = "ShieldThrowTrailMirage-Manwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
 			 {
 				 WeaponName = "GunGrenadeToss",
 				 ProjectileProperty = "DetonateGraphic",
-				 ChangeValue = "ZagGrenadeExplosionApollo",
+				 ChangeValue = "ZagGrenadeExplosionManwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1174,14 +1174,14 @@ if ModUtil ~= nil then
 				 WeaponName = "SpearRushWeapon",
 				 ProjectileName = "SpearRushWeapon",
 				 ProjectileProperty = "DetonateGraphic",
-				 ChangeValue = "SpearRushTrailFx-Apollo",
+				 ChangeValue = "SpearRushTrailFx-Manwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
 			 {
 				 WeaponNames = { "FistWeaponSpecial", "FistWeaponSpecialDash" },
 				 WeaponProperty = "FireFx",
-				 ChangeValue = "FistFxUppercutDirectionalApollo",
+				 ChangeValue = "FistFxUppercutDirectionalManwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1190,7 +1190,7 @@ if ModUtil ~= nil then
 				 TraitName = "GunLoadedGrenadeTrait",
 				 WeaponNames = { "GunGrenadeToss" },
 				 ProjectileProperty = "Graphic",
-				 ChangeValue = "GunGrenadeLuciferOrb-Apollo",
+				 ChangeValue = "GunGrenadeLuciferOrb-Manwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1206,7 +1206,7 @@ if ModUtil ~= nil then
 				 TraitName = "GunLoadedGrenadeTrait",
 				 WeaponNames = { "GunBombWeapon" },
 				 ProjectileProperty = "DetonateGraphic",
-				 ChangeValue = "ZagGrenadeExplosionApollo",
+				 ChangeValue = "ZagGrenadeExplosionManwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1214,7 +1214,7 @@ if ModUtil ~= nil then
 				 TraitName = "GunLoadedGrenadeTrait",
 				 WeaponNames = { "GunBombImmolation" },
 				 ProjectileProperty = "DetonateGraphic",
-				 ChangeValue = "LuciferOrbAoE-Apollo",
+				 ChangeValue = "LuciferOrbAoE-Manwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1223,7 +1223,7 @@ if ModUtil ~= nil then
 				 TraitName = "BowMarkHomingTrait",
 				 WeaponNames = { "BowSplitShot" },
 				 ProjectileProperty = "Graphic",
-				 ChangeValue = "BowWeaponArrow-Apollo-SplitShot-Alt01",
+				 ChangeValue = "BowWeaponArrow-Manwe-SplitShot-Alt01",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1231,7 +1231,7 @@ if ModUtil ~= nil then
 				 TraitName = "BowLoadAmmoTrait",
 				 WeaponNames = { "BowSplitShot" },
 				 ProjectileProperty = "Graphic",
-				 ChangeValue = "BowWeaponArrow-Apollo-SplitShot-Alt02",
+				 ChangeValue = "BowWeaponArrow-Manwe-SplitShot-Alt02",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1239,7 +1239,7 @@ if ModUtil ~= nil then
 				 TraitName = "FistDetonateTrait",
 				 WeaponNames = { "FistWeaponSpecial" },
 				 WeaponProperty = "FireFx",
-				 ChangeValue = "ClawSwipeUppercut-Apollo",
+				 ChangeValue = "ClawSwipeUppercut-Manwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1247,7 +1247,7 @@ if ModUtil ~= nil then
 				 TraitName = "FistDetonateTrait",
 				 WeaponNames = { "FistWeaponSpecialDash" },
 				 WeaponProperty = "FireFx",
-				 ChangeValue = "ClawSwipeUppercut-Apollo",
+				 ChangeValue = "ClawSwipeUppercut-Manwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1255,7 +1255,7 @@ if ModUtil ~= nil then
 				 TraitName = "FistDetonateTrait",
 				 WeaponNames = { "FistWeaponSpecialDash" },
 				 WeaponProperty = "FireFx",
-				 ChangeValue = "ClawSwipeUppercutSpecial-Apollo",
+				 ChangeValue = "ClawSwipeUppercutSpecial-Manwe",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1263,7 +1263,7 @@ if ModUtil ~= nil then
 				 TraitName = "FistTeleportSpecialTrait",
 				 WeaponNames = { "FistWeaponSpecial", "FistWeaponSpecialDash" },
 				 WeaponProperty = "FireFx",
-				 ChangeValue = "FistFxUppercutDirectionalApollo_FlashKick",
+				 ChangeValue = "FistFxUppercutDirectionalManwe_FlashKick",
 				 ChangeType = "Absolute",
 				 ExcludeLinked = true,
 			 },
@@ -1276,7 +1276,7 @@ if ModUtil ~= nil then
 				 TraitName = "GunLoadedGrenadeTrait",
 				 LegalUnits = { "GunBombUnit" },
 				 ThingProperty = "Graphic",
-				 ChangeValue = "LuciferBomb-Apollo",
+				 ChangeValue = "LuciferBomb-Manwe",
 				 ChangeType = "Absolute",
 			 },
 	
@@ -1284,23 +1284,13 @@ if ModUtil ~= nil then
 		 ExtractValues =
 		 {
 			{
-				ExtractAs = "TooltipBlindDuration",
+				ExtractAs = "TooltipAirborneDuration",
 				SkipAutoExtract = true,
 				External = true,
 				BaseType = "Effect",
 				WeaponName = "SwordWeapon",
-				BaseName = "ApolloBlind",
+				BaseName = "ManweAirborne",
 				BaseProperty = "Duration",
-			},
-			{
-				ExtractAs = "TooltipBlindPower",
-				SkipAutoExtract = true,
-				External = true,
-				BaseType = "Effect",
-				WeaponName = "SwordWeapon",
-				BaseName = "ApolloBlind",
-				BaseProperty = "Amount",
-				Format = "Percent"
 			}
 		 }
 	 }
