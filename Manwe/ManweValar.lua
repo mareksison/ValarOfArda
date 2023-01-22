@@ -518,7 +518,7 @@ if ModUtil ~= nil then
 	 {
 			 Name = "ManweWeaponTrait",
 			 InheritFrom = { "ShopTier1Trait" },
-			 God = "Manwe",
+			 God = "Manwë",
 			 Slot = "Melee",
 			 Icon =  "Boon_Manwe_01",
 			 AddOutgoingDamageModifiers =
@@ -1025,7 +1025,7 @@ if ModUtil ~= nil then
 	 {
 		 Name = "ManweSecondaryTrait",
 		 InheritFrom = { "ShopTier1Trait" },
-		 God = "Manwe",
+		 God = "Manwë",
 		 Slot = "Secondary",
 		 Icon =  "Boon_Manwe_02",
 		 AddOutgoingDamageModifiers =
@@ -1296,15 +1296,15 @@ if ModUtil ~= nil then
 	 }
 	 
 	table.insert(OlympusTraitData.FistSpecialFireballTrait.PropertyChanges,{
-		TraitName = "ApolloSecondaryTrait",
+		TraitName = "ManweSecondaryTrait",
 		WeaponName = "FistWeaponSpecial",
 		ProjectileProperty = "Graphic",
-		ChangeValue = "FistFireballFx-Apollo",
+		ChangeValue = "FistFireballFx-Manwe",
 		ChangeType = "Absolute",
 		ExcludeLinked = true,
 	})
 	table.insert(OlympusTraitData.FistSpecialFireballTrait.PropertyChanges,{
-		TraitName = "ApolloSecondaryTrait",
+		TraitName = "ManweSecondaryTrait",
 		WeaponName = "FistWeaponSpecial",
 		WeaponProperty = "FireFx",
 		ChangeValue = "null",
@@ -1312,32 +1312,33 @@ if ModUtil ~= nil then
 		ExcludeLinked = true,
 	})
 	table.insert(OlympusTraitData.FistSpecialLandTrait.PropertyChanges,{
-		TraitName = "ApolloSecondaryTrait",
+		TraitName = "ManweSecondaryTrait",
 		WeaponNames = { "FistWeaponLandAreaAttack" },
 		ProjectileProperty = "DetonateGraphic",
-		ChangeValue = "FistSpecialLandFx_Apollo",
+		ChangeValue = "FistSpecialLandFx_Manwe",
 		ChangeType = "Absolute",
 		ExcludeLinked = true,
 	})
 	table.insert(OlympusTraitData.SpearThrowObjectAOETrait.PropertyChanges,{
-		TraitName = "ApolloSecondaryTrait",
+		TraitName = "ManweSecondaryTrait",
 		WeaponNames = { "SpearThrowImmolation" },
 		ProjectileProperty = "DetonateGraphic",
 		ChangeType = "Absolute",
-		ChangeValue = "RadialNovaSwordParry-Apollo",
+		ChangeValue = "RadialNovaSwordParry-Manwe",
 		ExcludeLinked = true,
 	})
 	
-	OlympusTraitData.ApolloDashTrait =
+	-- MAREK CHECK THIS
+	OlympusTraitData.ManweDashTrait =
 	 {
-		 Name = "ApolloDashTrait",
+		 Name = "ManweDashTrait",
 		 InheritFrom = { "ShopTier1Trait" },
 		 -- Inherit
 		 Cost = 30,
 		 -- New Data
-		 God = "Apollo",
+		 God = "Manwë",
 		 Slot = "Rush",
-		 Icon = "Boon_Apollo_03",
+		 Icon = "Boon_Manwe_03",
 		 RarityLevels =
 		 {
 			 Common =
@@ -1375,7 +1376,7 @@ if ModUtil ~= nil then
 			 {
 				 WeaponNames = WeaponSets.HeroRushWeapons,
 				 WeaponProperty = "Projectile",
-				 ChangeValue = "ApolloDashProjectile",
+				 ChangeValue = "ManweProjectile",
 				 ChangeType = "Absolute",
 			 },
 			 {
@@ -1407,20 +1408,14 @@ if ModUtil ~= nil then
 			 },
 			 {
 				 WeaponNames = WeaponSets.HeroRushWeapons,
-				 EffectName = "ApolloBlind",
-				 EffectProperty = "Active",
-				 ChangeValue = true,
-			 },
-			 {
-				 WeaponNames = WeaponSets.HeroRushWeapons,
 				 WeaponProperty = "FireFx",
-				 ChangeValue = "BlinkTrailVerticalB-Apollo",
+				 ChangeValue = "BlinkTrailVerticalB-Manwe",
 				 ChangeType = "Absolute",
 			 },
 			 {
 				 WeaponNames = WeaponSets.HeroRushWeapons,
 				 WeaponProperty = "FireGraphic",
-				 ChangeValue = "ZagreusDashNoCollide_Apollo",
+				 ChangeValue = "ZagreusDashNoCollide_Manwe",
 				 ChangeType = "Absolute",
 			 },
 			 {
@@ -1439,23 +1434,13 @@ if ModUtil ~= nil then
 		 ExtractValues =
 		 {
 			 {
-				 ExtractAs = "TooltipBlindDuration",
+				 ExtractAs = "TooltipAirborneDuration",
 				 SkipAutoExtract = true,
 				 External = true,
 				 BaseType = "Effect",
 				 WeaponName = "SwordWeapon",
-				 BaseName = "ApolloBlind",
+				 BaseName = "ManweAirborne",
 				 BaseProperty = "Duration",
-			 },
-			 {
-				 ExtractAs = "TooltipBlindPower",
-				 SkipAutoExtract = true,
-				 External = true,
-				 BaseType = "Effect",
-				 WeaponName = "SwordWeapon",
-				 BaseName = "ApolloBlind",
-				 BaseProperty = "Amount",
-				 Format = "Percent"
 			 }
 		 }
 	 }
