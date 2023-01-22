@@ -1434,37 +1434,37 @@ if ModUtil ~= nil then
 		 ExtractValues =
 		 {
 			 {
-				 ExtractAs = "TooltipAirborneDuration",
+				 ExtractAs = "TooltipGustDuration",
 				 SkipAutoExtract = true,
 				 External = true,
 				 BaseType = "Effect",
 				 WeaponName = "SwordWeapon",
-				 BaseName = "ManweAirborne",
+				 BaseName = "Gust",
 				 BaseProperty = "Duration",
 			 }
 		 }
 	 }
-	OlympusTraitData.ApolloRangedTrait =
+	OlympusTraitData.ManweRangedTrait =
 	{
-			Name = "ApolloRangedTrait",
+			Name = "ManweRangedTrait",
 			InheritFrom = { "ShopTier1Trait" },
-			God = "Apollo",
+			God = "Manwë",
 			Slot = "Ranged",
-			Icon = "Boon_Apollo_04",
+			Icon = "Boon_Manwe_04",
 			TraitDependencyTextOverrides =
 			{
 				ShieldLoadAmmoTrait =
 				{
-					Name = "ShieldLoadAmmo_ApolloRangedTrait",
-					CustomTrayText = "ShieldLoadAmmo_ApolloRangedTrait_Tray",
+					Name = "ShieldLoadAmmo_ManweRangedTrait",
+					CustomTrayText = "ShieldLoadAmmo_ManweRangedTrait_Tray",
 				},
 				BowLoadAmmoTrait =
 				{
-					Name = "BowLoadAmmo_ApolloRangedTrait",
-					CustomTrayText = "BowLoadAmmo_ApolloRangedTrait_Tray",
+					Name = "BowLoadAmmo_ManweRangedTrait",
+					CustomTrayText = "BowLoadAmmo_ManweRangedTrait_Tray",
 				},
 			},
-			CustomTrayText = "ApolloRangedTrait_Tray",
+			CustomTrayText = "ManweRangedTrait_Tray",
 			UnloadAmmoOffset = 
 			{
 				BaseValue = -20,
@@ -1499,7 +1499,7 @@ if ModUtil ~= nil then
 				{
 					WeaponNames = WeaponSets.HeroNonPhysicalWeapons,
 					WeaponProperty = "Projectile",
-					ChangeValue = "ApolloLobProjectile",
+					ChangeValue = "ManweProjectile",
 					ChangeType = "Absolute",
 				},
 				{
@@ -1570,13 +1570,7 @@ if ModUtil ~= nil then
 				},
 				{
 					WeaponNames = WeaponSets.HeroNonPhysicalWeapons,
-					WeaponProperty = "ChargeStartAnimation",
-					ChangeValue = "ZagreusRangedWeapon_ChargeDionysusLob",
-					ChangeType = "Absolute",
-				},
-				{
-					WeaponNames = WeaponSets.HeroNonPhysicalWeapons,
-					ProjectileName = "ApolloLobProjectile",
+					ProjectileName = "ManweProjectile",
 					ProjectileProperty = "DamageLow",
 					BaseMin = 90,
 					BaseMax = 90,
@@ -1588,13 +1582,13 @@ if ModUtil ~= nil then
 					},
 					ExtractValue =
 					{
-						ExtractAs = "TooltipDamage",
+						ExtractAs = "TooltipDuration",
 					},
 					ExtractSource = "ExtractSource",
 				},
 				{
 					WeaponNames = WeaponSets.HeroNonPhysicalWeapons,
-					ProjectileName = "ApolloLobProjectile",
+					ProjectileName = "ManweProjectile",
 					ProjectileProperty = "DamageHigh",
 					DeriveValueFrom = "DamageLow",
 				},
@@ -1602,7 +1596,7 @@ if ModUtil ~= nil then
 				{
 					TraitName = "ShieldLoadAmmoTrait",
 					WeaponNames = WeaponSets.HeroNonPhysicalWeapons,
-					ProjectileName = "DionysusLobProjectile",
+					ProjectileName = "ManweProjectile",
 					ProjectileProperty = "DamageLow",
 					DeriveValueFrom = "ExtractSource",
 					ExtractValue =
@@ -1613,14 +1607,14 @@ if ModUtil ~= nil then
 				{
 					TraitName = "ShieldLoadAmmoTrait",
 					WeaponNames = WeaponSets.HeroNonPhysicalWeapons,
-					ProjectileName = "DionysusLobProjectile",
+					ProjectileName = "ManweProjectile",
 					ProjectileProperty = "DamageHigh",
 					DeriveValueFrom = "ExtractSource",
 				},
 				{
 					TraitName = "ShieldLoadAmmoTrait",
 					WeaponNames = WeaponSets.HeroNonPhysicalWeapons,
-					ExcludeProjectileName = "DionysusLobProjectile",
+					ExcludeProjectileName = "ManweProjectile",
 					ProjectileProperty = "DetonateGraphic",
 					ChangeValue = "null",
 				},
@@ -1670,32 +1664,22 @@ if ModUtil ~= nil then
 					BaseProperty = "DamageLow",
 				},
 				{
-					ExtractAs = "TooltipBlindDuration",
+					ExtractAs = "TooltipGustDuration",
 					SkipAutoExtract = true,
 					External = true,
 					BaseType = "Effect",
 					WeaponName = "SwordWeapon",
-					BaseName = "ApolloBlind",
+					BaseName = "Gust",
 					BaseProperty = "Duration",
-				},
-				{
-					ExtractAs = "TooltipBlindPower",
-					SkipAutoExtract = true,
-					External = true,
-					BaseType = "Effect",
-					WeaponName = "SwordWeapon",
-					BaseName = "ApolloBlind",
-					BaseProperty = "Amount",
-					Format = "PercentDelta"
 				}
 			}
 		}
 		
 	OlympusTraitData.ShieldLoadAmmo_ApolloRangedTrait = 
 	{
-		InheritFrom = {"ApolloRangedTrait"},
+		InheritFrom = {"ManweRangedTrait"},
 		Skip = true,
-		CustomTrayText = "ShieldLoadAmmo_ApolloRangedTrait_Tray",
+		CustomTrayText = "ShieldLoadAmmo_ManweRangedTrait_Tray",
         RequiredOneOfTraits = { "BowLoadAmmoTrait", "ShieldLoadAmmoTrait" }
 	}
 	OlympusTraitData.ApolloShoutTrait =
